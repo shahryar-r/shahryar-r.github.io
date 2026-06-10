@@ -1,11 +1,3 @@
 title: My Portfolio
 description: Personal portfolio website
-theme: minima
-
-<!-- 
-minima
-cayman
-architect
-slate
-hacker
--->
+theme: cayman # minima Other options: cayman, architect, slate, hacker
