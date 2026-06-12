@@ -3277,7 +3277,15 @@ input, select, textarea {
 		@media screen and (orientation: portrait) {
 
 			#wrapper > .bg {
-				background-size: auto, auto, contain;
+
+        			background-image:
+            			url("../../images/overlay.png"),
+            			linear-gradient(0deg, rgba(0,0,0,0.1), rgba(0,0,0,0.1)),
+            			url("../../images/bg_portrait.jpg");
+
+        			background-size: auto, auto, contain;
+        			background-position: center, center, top center;
+
 			}
 
 		}
