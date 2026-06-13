@@ -3274,11 +3274,23 @@ input, select, textarea {
 			opacity: 1;
 		}
 
-		@media screen and (orientation: portrait) {
+		@media screen and (orientation: portrait) and (max-aspect-ratio: 9/16) {
 
 			#wrapper > .bg {
 
-        			background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0,0,0,0), rgba(0,0,0,0)), url("../../images/bg_portrait.jpg");
+        			background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0,0,0,0), rgba(0,0,0,0)), url("../../images/bg_portrait_9_16.jpg");
+        			background-size: auto, auto, contain;
+        			background-position: center, center, top center;
+
+			}
+
+		}
+
+		@media screen and (orientation: portrait) and (min-aspect-ratio: 577/1024) {
+
+			#wrapper > .bg {
+
+        			background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0,0,0,0), rgba(0,0,0,0)), url("../../images/bg_portrait_3_4.jpg");
         			background-size: auto, auto, contain;
         			background-position: center, center, top center;
 
