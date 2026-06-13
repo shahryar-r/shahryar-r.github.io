@@ -113,6 +113,9 @@ input, select, textarea {
 			transition: none !important;
 		}
 
+
+
+
 /* Type */
 
 	html {
@@ -3298,6 +3301,15 @@ input, select, textarea {
 
 		}
 
+
+		body.no-background #wrapper > .bg {
+    							display: none !important;
+						}
+
+		body.no-background #wrapper {
+    						padding-top: 5rem;
+					}
+
 /* Intro */
 
 	#intro {
@@ -3975,7 +3987,7 @@ input, select, textarea {
 		cursor: default;
 		position: relative;
 		margin: 0 auto;
-		width: calc(100% - 4rem);
+		width: 50%;
 		max-width: 72rem;
 		z-index: 2;
 	}
