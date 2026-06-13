@@ -3234,7 +3234,7 @@ input, select, textarea {
 			width: 100%;
 			height: 100%;
 			background-color: #656565;
-			background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.1)), url("../../images/bg.jpg");
+			background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("../../images/bg.jpg");
 			background-size: auto, auto, 100% auto;
 			background-position: center, center, top center;
 			background-repeat: repeat, no-repeat, no-repeat;
@@ -3278,11 +3278,7 @@ input, select, textarea {
 
 			#wrapper > .bg {
 
-        			background-image:
-            			url("../../images/overlay.png"),
-            			linear-gradient(0deg, rgba(0,0,0,0.1), rgba(0,0,0,0.1)),
-            			url("../../images/bg_portrait.jpg");
-
+        			background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0,0,0,0), rgba(0,0,0,0)), url("../../images/bg_portrait.jpg");
         			background-size: auto, auto, contain;
         			background-position: center, center, top center;
 
