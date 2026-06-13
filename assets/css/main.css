@@ -3244,7 +3244,7 @@ input, select, textarea {
 
 
 			#wrapper > .bg.fixed {
-				position: fixed;
+				position: scroll;
 				width: 100vw;
 				height: 100vh;
 			}
