@@ -3314,7 +3314,7 @@ input, select, textarea {
 
 	#intro {
 		color: #ffffff;
-		padding: 8rem 4rem 6rem 4rem ;
+		padding: 0 ;
 		-moz-align-items: center;
 		-webkit-align-items: center;
 		-ms-align-items: center;
@@ -3342,6 +3342,7 @@ input, select, textarea {
 		min-height: 100vh;
 	}
 
+
 		#intro input, #intro select, #intro textarea {
 			color: #ffffff;
 		}
@@ -3353,7 +3354,7 @@ input, select, textarea {
 
 			#intro a:hover {
 				border-bottom-color: transparent;
-				color: black !important;
+				color: #ffffff !important;
 			}
 
 		#intro strong, #intro b {
@@ -3383,8 +3384,8 @@ input, select, textarea {
 		#intro button,
 		#intro .button {
 			background-color: transparent;
-			box-shadow: inset 0 0 0 2px #ffffff;
-			color: #ffffff !important;
+			box-shadow: inset 0 0 0 2px black;
+			color: black !important;
 		}
 
 			#intro input[type="submit"]:hover,
@@ -3392,6 +3393,7 @@ input, select, textarea {
 			#intro input[type="button"]:hover,
 			#intro button:hover,
 			#intro .button:hover {
+				background-color: transparent;
 				box-shadow: inset 0 0 0 2px #656565;
 				color: #656565 !important;
 			}
@@ -3401,9 +3403,9 @@ input, select, textarea {
 			#intro input[type="button"].primary,
 			#intro button.primary,
 			#intro .button.primary {
-				background-color: #ffffff;
-				box-shadow: none;
-				color: #1e252d !important;
+				background-color: transparent;
+				box-shadow: inset 0 0 0 2px black;
+				color: black !important;
 			}
 
 				#intro input[type="submit"].primary:hover,
@@ -3411,7 +3413,9 @@ input, select, textarea {
 				#intro input[type="button"].primary:hover,
 				#intro button.primary:hover,
 				#intro .button.primary:hover {
-					background-color: #656565;
+					background-color: transparent;
+					box-shadow: inset 0 0 0 2px #656565;
+					color: #656565 !important;
 				}
 
 		#intro h1 {
@@ -3427,7 +3431,7 @@ input, select, textarea {
 		}
 
 		#intro + #header {
-			margin-top: -20rem;
+			margin-top: 0rem;
 		}
 
 			#intro + #header .logo {
@@ -3482,7 +3486,7 @@ input, select, textarea {
 
 			#intro {
 				padding: 4rem 4rem 2rem 4rem ;
-				min-height: 90vh;
+				min-height: 100vh;
 			}
 
 				#intro p br {
@@ -3499,7 +3503,7 @@ input, select, textarea {
 
 			#intro {
 				padding: 3rem 2rem 1rem 2rem ;
-				min-height: 80vh;
+				min-height: 100vh;
 			}
 
 				#intro h1 {
@@ -3513,9 +3517,9 @@ input, select, textarea {
 					margin-top: 0rem;
 				}
 
-				#intro .actions {
+				/* #intro .actions {
 					display: none;
-				}
+				} */
 
 		}
 
