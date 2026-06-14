@@ -2208,9 +2208,9 @@ input, select, textarea {
 	input[type="button"],
 	button,
 	.button {
-		background-color: transparent;
-		box-shadow: inset 0 0 0 2px #212931;
-		color: #212931 !important;
+		background-color: black;
+		box-shadow: inset 0 0 0 2px white;
+		color: white !important;
 	}
 
 		input[type="submit"]:hover,
@@ -2218,8 +2218,9 @@ input, select, textarea {
 		input[type="button"]:hover,
 		button:hover,
 		.button:hover {
-			box-shadow: inset 0 0 0 2px #656565;
-			color: #656565 !important;
+			background-color: white;
+			box-shadow: inset 0 0 0 2px black;
+			color: black !important;
 		}
 
 		input[type="submit"].primary,
@@ -2227,9 +2228,9 @@ input, select, textarea {
 		input[type="button"].primary,
 		button.primary,
 		.button.primary {
-			background-color: #212931;
-			box-shadow: none;
-			color: #ffffff !important;
+			background-color: black;
+			box-shadow: inset 0 0 0 2px white;
+			color: white !important;
 		}
 
 			input[type="submit"].primary:hover,
@@ -2237,7 +2238,9 @@ input, select, textarea {
 			input[type="button"].primary:hover,
 			button.primary:hover,
 			.button.primary:hover {
-				background-color: #656565;
+				background-color: white;
+				box-shadow: inset 0 0 0 2px black;
+				color: black !important;
 			}
 
 /* Form */
@@ -3237,12 +3240,13 @@ input, select, textarea {
 			width: 100%;
 			height: 100%;
 			background-color: #656565;
-			background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("../../images/bg_1_1.jpg");
-			background-size: auto, auto, 100% auto;
-			background-position: center, center, top center;
-			background-repeat: repeat, no-repeat, no-repeat;
+        		background-image: url("../../images/bg_portrait_16_9.png"), linear-gradient(0deg, rgba(0,0,0,0), rgba(0,0,0,0)), url("../../images/overlay.png");
+        		background-size: contain, auto, cover;
+        		background-position: top center, center, center;
+			background-repeat: no-repeat, no-repeat, no-repeat;
 			background-attachment: scroll, scroll, scroll;
 			z-index: -1;
+
 		}
 
 
@@ -3277,17 +3281,31 @@ input, select, textarea {
 			opacity: 1;
 		}
 
-		@media screen and (orientation: portrait) and (max-aspect-ratio: 10/16) {
+		@media screen and (orientation: portrait) {
 
 			#wrapper > .bg {
-
-        			background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0,0,0,0), rgba(0,0,0,0)), url("../../images/bg_portrait_10_16.jpg");
-        			background-size: auto, auto, contain;
-        			background-position: center, center, top center;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-color: #656565;
+        			background-image: url("../../images/bg_portrait_9_16.png"), linear-gradient(0deg, rgba(0,0,0,0), rgba(0,0,0,0)), url("../../images/overlay.png");
+        			background-size: contain, auto, cover;
+        			background-position: top center, center, center;
+				background-repeat: no-repeat, no-repeat, no-repeat;
+				background-attachment: scroll, scroll, scroll;
+				z-index: -1;
 
 			}
 
 		}
+
+
+/*
+
+and (max-aspect-ratio: 10/16)
+
 
 		@media screen and (orientation: portrait) and (min-aspect-ratio: 626/1000) and (max-aspect-ratio: 3/4) {
 
@@ -3315,7 +3333,7 @@ input, select, textarea {
 
 		}
 
-
+*/
 
 		body.no-background #wrapper > .bg {
     							display: none !important;
@@ -3651,8 +3669,11 @@ input, select, textarea {
 
 		}
 
+
+
 /* Nav */
 
+/*
 	#nav {
 		color: #ffffff;
 		display: -moz-flex;
@@ -3801,14 +3822,17 @@ input, select, textarea {
 
 		}
 
+*/
+
+
 /* Main */
 
 	#main {
-		background-color: #ffffff;
+		background-color: white;
 		position: relative;
 		margin: 0 auto;
 		width: calc(100% - 4rem);
-		max-width: 72rem;
+		/* max-width: 72rem; */
 		z-index: 2;
 	}
 
@@ -3929,7 +3953,7 @@ input, select, textarea {
 					border-top-width: 0;
 				}
 
-			@media screen and (max-width: 980px) {
+			@media screen and (orientation: landscape) {
 
 				#main > .posts > * {
 					width: 50%;
@@ -3942,14 +3966,14 @@ input, select, textarea {
 
 			}
 
-			@media screen and (max-width: 736px) {
+			@media screen and (orientation: portrait) {
 
 				#main > .posts > * {
 					width: 100%;
 				}
 
 				#main > .posts > * {
-					padding: 2rem;
+					/* padding: 2rem; */
 					width: 100%;
 				}
 
@@ -3977,15 +4001,15 @@ input, select, textarea {
 
 			}
 
-		@media screen and (max-width: 736px) {
+		/* @media screen and (orientation: landscape) {
 
 			#main > * {
 				padding: 2rem 2rem 0.1rem 2rem ;
 			}
 
-		}
+		} */
 
-		@media screen and (max-width: 480px) {
+		@media screen and (orientation: portrait) {
 
 			#main {
 				width: 100%;
@@ -4531,7 +4555,9 @@ input, select, textarea {
 
 		}
 
+
 /* Nav Panel */
+
 
 	#navPanelToggle {
 		text-decoration: none;
@@ -4544,7 +4570,7 @@ input, select, textarea {
 		top: 0.75rem;
 		right: 0.75rem;
 		border: 0;
-		color: #ffffff;
+		color: white;
 		font-family: "Source Sans Pro", Helvetica, sans-serif;
 		font-size: 0.9rem;
 		font-weight: 900;
@@ -4577,7 +4603,6 @@ input, select, textarea {
 			box-shadow: 0 0.125rem 0.75rem 0 rgba(30, 37, 45, 0.25);
 			color: #212931;
 		}
-
 			#navPanelToggle.alt:hover {
 				background-color: #ffffff;
 			}
@@ -4608,15 +4633,15 @@ input, select, textarea {
 		-webkit-transition: -webkit-transform 0.5s ease, box-shadow 0.5s ease, visibility 0.5s;
 		-ms-transition: -ms-transform 0.5s ease, box-shadow 0.5s ease, visibility 0.5s;
 		transition: transform 0.5s ease, box-shadow 0.5s ease, visibility 0.5s;
-		display: none;
+		display: block;
 		-webkit-overflow-scrolling: touch;
-		background: #ffffff;
+		background: white;
 		box-shadow: none;
-		color: #212931;
+		/* color: blue;*/
 		height: 100%;
-		max-width: 80%;
+		max-width: 100%;
 		overflow-y: auto;
-		padding: 3rem 2rem;
+		padding: 2.5rem 1.75rem;
 		position: fixed;
 		right: 0;
 		top: 0;
@@ -4631,7 +4656,7 @@ input, select, textarea {
 		}
 
 			#navPanel .links li {
-				border-top: solid 2px #eeeeee;
+				border-top: 0;
 			}
 
 				#navPanel .links li a {
@@ -4658,7 +4683,7 @@ input, select, textarea {
 			transition: color 0.2s ease-in-out;
 			-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 			border: 0;
-			color: #909498;
+			/* color: white; */
 			cursor: pointer;
 			display: block;
 			height: 3.25rem;
@@ -4690,9 +4715,9 @@ input, select, textarea {
 				font-size: 1.25rem;
 			}
 
-			#navPanel .close:hover {
-				color: #212931;
-			}
+			/* #navPanel .close:hover {
+				color: #656565;
+			} */
 
 			@media screen and (max-width: 736px) {
 
@@ -4703,35 +4728,69 @@ input, select, textarea {
 
 			}
 
-		@media screen {
 
-			#navPanel {
-				display: block;
-			}
 
-		}
-
-		@media screen and (max-width: 736px) {
-
-			#navPanel {
-				padding: 2.5rem 1.75rem;
-			}
-
-		}
 
 	@media screen {
+
+		#navPanel {
+			display: block;
+		}
 
 		body.is-navPanel-visible #wrapper {
 			opacity: 0.5;
 		}
 
 		body.is-navPanel-visible #navPanel {
-			-moz-transform: translateX(0);
-			-webkit-transform: translateX(0);
-			-ms-transform: translateX(0);
-			transform: translateX(0);
-			box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.2);
+			-moz-transform: translateX(0rem);
+			-webkit-transform: translateX(0rem);
+			-ms-transform: translateX(0rem);
+			transform: translateX(0rem);
 			visibility: visible;
 		}
 
 	}
+
+
+
+/*
+#navPanel a {
+  color: white !important;
+  text-decoration: none;
+}
+
+#navPanel .icon,
+#navPanel .icon:before,
+#navPanel .icons a,
+#navPanel .icons .label {
+  color: white !important;
+}
+
+/* Hover state */
+#navPanel a:hover,
+#navPanel .icons a:hover,
+#navPanel .icon:hover {
+  color: #cccccc !important;
+}
+
+/* Optional: active/selected link */
+#navPanel .links li.active a {
+  color: #ffffff !important;
+}
+
+/* Optional: hover background effect like templates */
+#navPanel .links li a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+#navPanel .close,
+#navPanel .close:before {
+  color: white !important;
+}
+
+/* hover state */
+#navPanel .close:hover {
+  color: #656565 !important;
+}
+
+*/
