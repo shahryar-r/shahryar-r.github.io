@@ -3237,7 +3237,7 @@ input, select, textarea {
 			width: 100%;
 			height: 100%;
 			background-color: #656565;
-			background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("../../images/bg.jpg");
+			background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("../../images/bg_1_1.jpg");
 			background-size: auto, auto, 100% auto;
 			background-position: center, center, top center;
 			background-repeat: repeat, no-repeat, no-repeat;
@@ -3277,11 +3277,11 @@ input, select, textarea {
 			opacity: 1;
 		}
 
-		@media screen and (orientation: portrait) and (max-aspect-ratio: 9/16) {
+		@media screen and (orientation: portrait) and (max-aspect-ratio: 10/16) {
 
 			#wrapper > .bg {
 
-        			background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0,0,0,0), rgba(0,0,0,0)), url("../../images/bg_portrait_9_16.jpg");
+        			background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0,0,0,0), rgba(0,0,0,0)), url("../../images/bg_portrait_10_16.jpg");
         			background-size: auto, auto, contain;
         			background-position: center, center, top center;
 
@@ -3289,7 +3289,7 @@ input, select, textarea {
 
 		}
 
-		@media screen and (orientation: portrait) and (min-aspect-ratio: 577/1024) {
+		@media screen and (orientation: portrait) and (min-aspect-ratio: 626/1000) and (max-aspect-ratio: 3/4) {
 
 			#wrapper > .bg {
 
@@ -3300,6 +3300,21 @@ input, select, textarea {
 			}
 
 		}
+
+
+
+		@media screen and (orientation: portrait) and (min-aspect-ratio: 751/1000) and (max-aspect-ratio: 999/1000) {
+
+			#wrapper > .bg {
+
+        			background-image: url("../../images/overlay.png"), linear-gradient(0deg, rgba(0,0,0,0), rgba(0,0,0,0)), url("../../images/bg_portrait_1_1.jpg");
+        			background-size: auto, auto, contain;
+        			background-position: center, center, top center;
+
+			}
+
+		}
+
 
 
 		body.no-background #wrapper > .bg {
