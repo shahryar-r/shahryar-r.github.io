@@ -1,11 +1,6 @@
 @import url(fontawesome-all.min.css);
 @import url("https://fonts.googleapis.com/css?family=Merriweather:300,700,300italic,700italic|Source+Sans+Pro:900");
 
-/*
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
 
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
@@ -70,6 +65,15 @@ input, select, textarea {
 	-webkit-appearance: none;
 	-ms-appearance: none;
 	appearance: none;
+}
+
+
+a,
+button,
+input,
+select,
+textarea {
+    -webkit-tap-highlight-color: transparent;
 }
 
 /* Basic */
@@ -2074,7 +2078,6 @@ input, select, textarea {
 		-moz-appearance: none;
 		-webkit-appearance: none;
 		-ms-appearance: none;
-		-webkit-tap-highlight-color: rgba(101, 101, 101, 0.25);
 		appearance: none;
 		-moz-transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
 		-webkit-transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
@@ -3233,7 +3236,6 @@ input, select, textarea {
 		-moz-transition: opacity 0.5s ease;
 		-webkit-transition: opacity 0.5s ease;
 		-ms-transition: opacity 0.5s ease;
-		-webkit-tap-highlight-color: rgba(101, 101, 101, 0.25);
 		transition: opacity 0.5s ease;
 		position: relative;
 		z-index: 1;
@@ -3357,7 +3359,6 @@ and (max-aspect-ratio: 10/16)
 		padding: 0 ;
 		-moz-align-items: center;
 		-webkit-align-items: center;
-		-webkit-tap-highlight-color: rgba(101, 101, 101, 0.25);
 		-ms-align-items: center;
 		align-items: center;
 		display: -moz-flex;
@@ -3571,7 +3572,6 @@ and (max-aspect-ratio: 10/16)
 		-moz-align-items: center;
 		-webkit-align-items: center;
 		-ms-align-items: center;
-		-webkit-tap-highlight-color: rgba(101, 101, 101, 0.25);
 		align-items: center;
 		display: -moz-flex;
 		display: -webkit-flex;
@@ -3692,7 +3692,6 @@ and (max-aspect-ratio: 10/16)
 		-moz-transition: -moz-transform 1s ease, opacity 1s ease;
 		-webkit-transition: -webkit-transform 1s ease, opacity 1s ease;
 		-ms-transition: -ms-transform 1s ease, opacity 1s ease;
-		-webkit-tap-highlight-color: rgba(101, 101, 101, 0.25);
 		transition: transform 1s ease, opacity 1s ease;
 		background: rgba(255, 255, 255, 0.175);
 		height: 4rem;
@@ -4576,7 +4575,6 @@ and (max-aspect-ratio: 10/16)
 		-moz-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 		-webkit-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 		-ms-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-		-webkit-tap-highlight-color: rgba(101, 101, 101, 0.25);
 		transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 		display: none;
 		position: fixed;
@@ -4641,7 +4639,6 @@ and (max-aspect-ratio: 10/16)
 		-moz-transform: translateX(20rem);
 		-webkit-transform: translateX(20rem);
 		-ms-transform: translateX(20rem);
-		-webkit-tap-highlight-color: rgba(101, 101, 101, 0.25);
 		transform: translateX(20rem);
 		-moz-transition: -moz-transform 0.5s ease, box-shadow 0.5s ease, visibility 0.5s;
 		-webkit-transition: -webkit-transform 0.5s ease, box-shadow 0.5s ease, visibility 0.5s;
@@ -4704,7 +4701,6 @@ and (max-aspect-ratio: 10/16)
 			-moz-transition: color 0.2s ease-in-out;
 			-webkit-transition: color 0.2s ease-in-out;
 			-ms-transition: color 0.2s ease-in-out;
-			-webkit-tap-highlight-color: rgba(101, 101, 101, 0.25);
 			transition: color 0.2s ease-in-out;
 			border: 0;
 			color: black;
