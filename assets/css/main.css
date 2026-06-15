@@ -146,6 +146,7 @@ input, select, textarea {
 
 		}
 
+
 	body {
 		color: black;
 	}
@@ -294,14 +295,15 @@ input, select, textarea {
 		color: black;
 	}
 
+
 	a {
 		color: black;
 		border-bottom-color: black;
 	}
 
 		a:hover {
-			border-bottom-color: transparent;
-			color: black !important;
+			color: #656565;
+			border-bottom-color: #656565;
 		}
 
 	strong, b {
@@ -2390,6 +2392,7 @@ input, select, textarea {
 
 	textarea {
 		padding: 0.75rem 1rem;
+		resize: vertical;
 	}
 
 	input[type="checkbox"],
@@ -2823,12 +2826,12 @@ input, select, textarea {
 			}
 
 			ul.icons li .icon:before {
-				width: 2.25rem;
-				height: 2.25rem;
-				line-height: 2.25rem;
+				width: 3rem;
+				height: 3rem;
+				line-height: 3rem;
 				display: inline-block;
 				text-align: center;
-				border-radius: 100%;
+				border-radius: 0%;
 				font-size: 1.25rem;
 			}
 
@@ -2837,7 +2840,7 @@ input, select, textarea {
 			-webkit-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 			-ms-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 			transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-			font-size: 1rem;
+			font-size: 1.5rem;
 		}
 
 /* List */
@@ -2900,10 +2903,12 @@ input, select, textarea {
 	}
 
 	ul.icons.alt li .icon:before {
-		box-shadow: inset 0 0 0 2px #eeeeee;
+		color: black !important;
+		box-shadow: inset 0 0 0 2px black;
 	}
 
 	ul.icons.alt li a.icon:hover:before {
+		color: #656565 !important;
 		box-shadow: inset 0 0 0 2px #656565;
 	}
 
@@ -4020,13 +4025,13 @@ and (max-aspect-ratio: 10/16)
 /* Footer */
 
 	#footer {
-		color: #717981;
+		/*color: #717981;*/
 		display: -moz-flex;
 		display: -webkit-flex;
 		display: -ms-flex;
 		display: flex;
-		background-color: #f5f5f5;
-		color: #909498;
+		background-color: white;
+		color: black;
 		cursor: default;
 		position: relative;
 		margin: 0 auto;
@@ -4036,42 +4041,42 @@ and (max-aspect-ratio: 10/16)
 	}
 
 		#footer input, #footer select, #footer textarea {
-			color: #717981;
+			color: black;
 		}
 
 		#footer a {
-			color: #717981;
-			border-bottom-color: rgba(113, 121, 129, 0.5);
+			color: black;
+			border-bottom-color: black;
 		}
 
 			#footer a:hover {
 				border-bottom-color: transparent;
-				color: #656565 !important;
+				color: black !important;
 			}
 
 		#footer strong, #footer b {
-			color: #717981;
+			color: black;
 		}
 
 		#footer h1, #footer h2, #footer h3, #footer h4, #footer h5, #footer h6 {
-			color: #717981;
+			color: black;
 		}
 
 		#footer blockquote {
-			border-left-color: #e2e2e2;
+			border-left-color: black;
 		}
 
 		#footer code {
 			background: rgba(220, 220, 220, 0.5);
-			border-color: #e2e2e2;
+			border-color: rgba(220, 220, 220, 0.5);
 		}
 
 		#footer hr {
-			border-bottom-color: #e2e2e2;
+			border-bottom-color: black;
 		}
 
 		#footer .box {
-			border-color: #e2e2e2;
+			border-color: black;
 		}
 
 		#footer input[type="submit"],
@@ -4079,9 +4084,9 @@ and (max-aspect-ratio: 10/16)
 		#footer input[type="button"],
 		#footer button,
 		#footer .button {
-			background-color: transparent;
-			box-shadow: inset 0 0 0 2px #717981;
-			color: #717981 !important;
+			background-color: black;
+			box-shadow: inset 0 0 0 2px black;
+			color: white !important;
 		}
 
 			#footer input[type="submit"]:hover,
@@ -4089,7 +4094,8 @@ and (max-aspect-ratio: 10/16)
 			#footer input[type="button"]:hover,
 			#footer button:hover,
 			#footer .button:hover {
-				box-shadow: inset 0 0 0 2px #656565;
+				background-color: white;
+				box-shadow: inset 0 0 0 2px black;
 				color: black !important;
 			}
 
@@ -4098,9 +4104,9 @@ and (max-aspect-ratio: 10/16)
 			#footer input[type="button"].primary,
 			#footer button.primary,
 			#footer .button.primary {
-				background-color: #717981;
-				box-shadow: none;
-				color: #f5f5f5 !important;
+				background-color: black;
+				box-shadow: inset 0 0 0 2px black;
+				color: white !important;
 			}
 
 				#footer input[type="submit"].primary:hover,
@@ -4108,11 +4114,13 @@ and (max-aspect-ratio: 10/16)
 				#footer input[type="button"].primary:hover,
 				#footer button.primary:hover,
 				#footer .button.primary:hover {
-					background-color: #656565;
+					background-color: white;
+					box-shadow: inset 0 0 0 2px black;
+					color: black !important;
 				}
 
 		#footer label {
-			color: #717981;
+			color: black; <!-- color for name, email, and message labels in forms for contact -->
 		}
 
 		#footer input[type="text"],
@@ -4120,7 +4128,7 @@ and (max-aspect-ratio: 10/16)
 		#footer input[type="email"],
 		#footer select,
 		#footer textarea {
-			border-color: #e2e2e2;
+			border-color: rgba(101, 101, 101, 0.25);
 		}
 
 			#footer input[type="text"]:focus,
@@ -4128,7 +4136,7 @@ and (max-aspect-ratio: 10/16)
 			#footer input[type="email"]:focus,
 			#footer select:focus,
 			#footer textarea:focus {
-				border-color: #656565;
+				border-color: rgba(101, 101, 101, 1);
 			}
 
 		#footer select {
@@ -4136,58 +4144,58 @@ and (max-aspect-ratio: 10/16)
 		}
 
 			#footer select option {
-				background-color: #f5f5f5;
-				color: #717981;
+				background-color: white;
+				color: black;
 			}
 
 		#footer .select-wrapper:before {
-			color: #e2e2e2;
+			color: black;
 		}
 
 		#footer input[type="checkbox"] + label,
 		#footer input[type="radio"] + label {
-			color: #717981;
+			color: black;
 		}
 
 			#footer input[type="checkbox"] + label:before,
 			#footer input[type="radio"] + label:before {
-				border-color: #e2e2e2;
+				border-color: black;
 			}
 
 		#footer input[type="checkbox"]:checked + label:before,
 		#footer input[type="radio"]:checked + label:before {
-			background-color: #717981;
-			border-color: #717981;
-			color: #f5f5f5;
+			background-color: white;
+			border-color: black;
+			color: black;
 		}
 
 		#footer input[type="checkbox"]:focus + label:before,
 		#footer input[type="radio"]:focus + label:before {
-			border-color: #656565;
+			border-color: black;
 		}
 
 		#footer ::-webkit-input-placeholder {
-			color: #b3b7bb !important;
+			color: black !important;
 		}
 
 		#footer :-moz-placeholder {
-			color: #b3b7bb !important;
+			color: black !important;
 		}
 
 		#footer ::-moz-placeholder {
-			color: #b3b7bb !important;
+			color: black !important;
 		}
 
 		#footer :-ms-input-placeholder {
-			color: #b3b7bb !important;
+			color: black !important;
 		}
 
 		#footer .formerize-placeholder {
-			color: #b3b7bb !important;
+			color: black !important;
 		}
 
 		#footer ul.divided li {
-			border-top-color: #e2e2e2;
+			border-top-color: black;
 		}
 
 		#footer ul.icons li a.icon:hover:before {
@@ -4195,7 +4203,7 @@ and (max-aspect-ratio: 10/16)
 		}
 
 		#footer ul.icons.alt li .icon:before {
-			box-shadow: inset 0 0 0 2px #e2e2e2;
+			box-shadow: inset 0 0 0 2px black;
 		}
 
 		#footer ul.icons.alt li a.icon:hover:before {
@@ -4203,39 +4211,39 @@ and (max-aspect-ratio: 10/16)
 		}
 
 		#footer header.major .date:before, #footer header.major .date:after {
-			border-top-color: #e2e2e2;
+			border-top-color: black;
 		}
 
 		#footer table tbody tr {
-			border-color: #e2e2e2;
+			border-color: black;
 		}
 
 			#footer table tbody tr:nth-child(2n + 1) {
-				background-color: rgba(220, 220, 220, 0.5);
+				background-color: white;
 			}
 
 		#footer table th {
-			color: #717981;
+			color: black;
 		}
 
 		#footer table thead {
-			border-bottom-color: #e2e2e2;
+			border-bottom-color: black;
 		}
 
 		#footer table tfoot {
-			border-top-color: #e2e2e2;
+			border-top-color: black;
 		}
 
 		#footer table.alt tbody tr td {
-			border-color: #e2e2e2;
+			border-color: black;
 		}
 
 		#footer .pagination a, #footer .pagination span {
-			border-color: #e2e2e2;
+			border-color: black;
 		}
 
 		#footer .pagination a {
-			color: #717981 !important;
+			color: black !important;
 		}
 
 			#footer .pagination a:hover {
@@ -4250,11 +4258,11 @@ and (max-aspect-ratio: 10/16)
 				}
 
 			#footer .pagination a.active {
-				background-color: #e2e2e2;
+				background-color: black;
 			}
 
 		#footer .pagination span {
-			color: #e2e2e2;
+			color: black;
 		}
 
 		#footer > section {
@@ -4271,7 +4279,7 @@ and (max-aspect-ratio: 10/16)
 			-ms-flex-shrink: 1;
 			flex-shrink: 1;
 			padding: 4rem 4rem 2rem 4rem ;
-			border-left: solid 2px #e2e2e2;
+			border-left: solid 2px black;
 		}
 
 			#footer > section:first-child {
@@ -4292,7 +4300,7 @@ and (max-aspect-ratio: 10/16)
 
 				#footer > section.split > section {
 					padding: 3rem 4rem 1rem 4rem ;
-					border-top: solid 2px #e2e2e2;
+					border-top: solid 2px black;
 				}
 
 					#footer > section.split > section:first-child {
@@ -4375,7 +4383,7 @@ and (max-aspect-ratio: 10/16)
 			}
 
 				#footer > section {
-					border-top: solid 2px #e2e2e2;
+					border-top: solid 2px black;
 				}
 
 					#footer > section:first-child {
@@ -4455,9 +4463,8 @@ and (max-aspect-ratio: 10/16)
 		}
 
 	#copyright {
-		color: #ffffff;
+		color: white !important;
 		position: relative;
-		color: rgba(255, 255, 255, 0.25);
 		cursor: default;
 		font-family: "Source Sans Pro", Helvetica, sans-serif;
 		font-size: 0.8rem;
@@ -4473,43 +4480,43 @@ and (max-aspect-ratio: 10/16)
 	}
 
 		#copyright input, #copyright select, #copyright textarea {
-			color: #ffffff;
+			color: white;
 		}
 
 		#copyright a {
-			color: #ffffff;
-			border-bottom-color: rgba(255, 255, 255, 0.5);
+			color: white;
+			border-bottom-color: black;
 		}
 
 			#copyright a:hover {
-				border-bottom-color: transparent;
-				color: #656565 !important;
+				border-bottom-color: black;
+				color: black !important;
 			}
 
 		#copyright strong, #copyright b {
-			color: #ffffff;
+			color: black;
 		}
 
 		#copyright h1, #copyright h2, #copyright h3, #copyright h4, #copyright h5, #copyright h6 {
-			color: #ffffff;
+			color: black;
 		}
 
 		#copyright blockquote {
-			border-left-color: #ffffff;
+			border-left-color: white;
 		}
 
 		#copyright code {
-			background: rgba(255, 255, 255, 0.075);
-			border-color: #ffffff;
+			background: rgba(101, 101, 101, 0.25);
+			border-color: white;
 		}
 
 		#copyright hr {
-			border-bottom-color: #ffffff;
+			border-bottom-color: black;
 		}
 
 		#copyright a {
-			color: inherit;
-			border-bottom-color: inherit;
+			color: white;
+			border-bottom-color: black;
 		}
 
 		#copyright ul {
@@ -4593,8 +4600,8 @@ and (max-aspect-ratio: 10/16)
 			font-weight: 900;
 		}
 
-		#navPanelToggle:before {
-			content: '\f0c9';
+		/* #navPanelToggle:before {
+			content: '\f0c9';    <!-- bar next to the menu -->
 			margin-right: 0.5rem;
 		}
 
@@ -4602,10 +4609,10 @@ and (max-aspect-ratio: 10/16)
 			background-color: rgba(255, 255, 255, 0.875);
 			box-shadow: 0 0.125rem 0.75rem 0 rgba(30, 37, 45, 0.25);
 			color: #212931;
-		}
+		} 
 			#navPanelToggle.alt:hover {
-				background-color: #ffffff;
-			}
+				background-color: black !important; <!-- hover for the bar next to the menu -->
+			} */
 
 		@media screen {
 
@@ -4615,14 +4622,14 @@ and (max-aspect-ratio: 10/16)
 
 		}
 
-		@media screen and (max-width: 736px) {
+		/* @media screen and (max-width: 736px) {
 
 			#navPanelToggle {
 				font-size: 0.8rem;
 				padding: 0.25rem 1rem;
 			}
 
-		}
+		} */
 
 	#navPanel {
 		-moz-transform: translateX(20rem);
@@ -4637,7 +4644,7 @@ and (max-aspect-ratio: 10/16)
 		-webkit-overflow-scrolling: touch;
 		background: white;
 		box-shadow: none;
-		/* color: blue;*/
+		color: black;
 		height: 100%;
 		max-width: 100%;
 		overflow-y: auto;
@@ -4664,11 +4671,21 @@ and (max-aspect-ratio: 10/16)
 					display: block;
 					font-family: "Source Sans Pro", Helvetica, sans-serif;
 					font-size: 0.9rem;
-					font-size: 0.9rem;
 					font-weight: 900;
+					color: black;
 					letter-spacing: 0.075em;
-					padding: 0.75rem 0;
+					padding: 0.75rem 0rem;
+					text-align: center;
 					text-transform: uppercase;
+    					border-radius: 10px;
+					transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+				}
+
+					#navPanel .links li a:hover,
+					#navPanel .links li.active a {
+    						background-color: rgba(101, 101, 101, 0.25);
+    						color: #656565;
+						border-radius: 10px;
 				}
 
 				#navPanel .links li:first-child {
@@ -4683,7 +4700,7 @@ and (max-aspect-ratio: 10/16)
 			transition: color 0.2s ease-in-out;
 			-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 			border: 0;
-			/* color: white; */
+			color: black;
 			cursor: pointer;
 			display: block;
 			height: 3.25rem;
@@ -4711,22 +4728,24 @@ and (max-aspect-ratio: 10/16)
 			}
 
 			#navPanel .close:before {
-				content: '\f00d';
+				content: '\f00d'; <!-- cross in the menu -->
 				font-size: 1.25rem;
 			}
 
-			/* #navPanel .close:hover {
-				color: #656565;
-			} */
 
-			@media screen and (max-width: 736px) {
+			#navPanel .close:hover {
+				color: #656565;
+			}
+
+
+			/* @media screen and (max-width: 736px) {
 
 				#navPanel .close {
 					height: 4rem;
 					line-height: 4rem;
 				}
 
-			}
+			} */
 
 
 
@@ -4753,44 +4772,5 @@ and (max-aspect-ratio: 10/16)
 
 
 
-/*
-#navPanel a {
-  color: white !important;
-  text-decoration: none;
-}
 
-#navPanel .icon,
-#navPanel .icon:before,
-#navPanel .icons a,
-#navPanel .icons .label {
-  color: white !important;
-}
 
-/* Hover state */
-#navPanel a:hover,
-#navPanel .icons a:hover,
-#navPanel .icon:hover {
-  color: #cccccc !important;
-}
-
-/* Optional: active/selected link */
-#navPanel .links li.active a {
-  color: #ffffff !important;
-}
-
-/* Optional: hover background effect like templates */
-#navPanel .links li a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-#navPanel .close,
-#navPanel .close:before {
-  color: white !important;
-}
-
-/* hover state */
-#navPanel .close:hover {
-  color: #656565 !important;
-}
-
-*/
