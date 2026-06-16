@@ -1,9 +1,3 @@
-/*
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
-
 (function($) {
 
 	var	$window = $(window),
@@ -12,6 +6,7 @@
 		$header = $('#header'),
 		$nav = $('#nav'),
 		$main = $('#main'),
+		$intro = $('#intro'),
 		$navPanelToggle, $navPanel, $navPanelInner;
 
 	// Breakpoints.
@@ -131,16 +126,18 @@
 			)
 				.appendTo($wrapper);
 
-			// Change toggle styling once we've scrolled past the header.
-				$header.scrollex({
-					bottom: '5vh',
+			// Change toggle styling once we've scrolled past the intro.
+				$intro.scrollex({
+					bottom: '0',
 					enter: function() {
 						$navPanelToggle.removeClass('alt');
 					},
 					leave: function() {
 						$navPanelToggle.addClass('alt');
 					}
+
 				});
+
 
 		// Panel.
 			$navPanel = $(
@@ -164,10 +161,7 @@
 
 			// Get inner.
 				$navPanelInner = $navPanel.children('nav');
-
 				$nav.children().appendTo($navPanelInner);
-				$navPanelInner.find('.icons, .icon').addClass('alt');
-
 
 			// Hack: Disable transitions on WP.
 				if (browser.os == 'wp'
@@ -232,6 +226,7 @@
 
 			});
 
+/*
 
 	// Menu.
 		$('#menu')
@@ -248,6 +243,7 @@
 				visibleClass: 'is-menu-visible'
 			});
 
+*/
 
 		}
 
