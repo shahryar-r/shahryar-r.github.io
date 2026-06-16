@@ -307,7 +307,8 @@ textarea {
 
 		a:hover {
 			color: #656565;
-			border-bottom-color: #656565;
+			border-bottom-color: white;
+
 		}
 
 	strong, b {
@@ -4576,12 +4577,11 @@ and (max-aspect-ratio: 10/16)
 		-webkit-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 		-ms-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 		transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-		display: none;
+		display: block;
 		position: fixed;
 		top: 0.75rem;
 		right: 0.75rem;
 		border: 0;
-		color: white;
 		font-family: "Source Sans Pro", Helvetica, sans-serif;
 		font-size: 0.9rem;
 		font-weight: 900;
@@ -4604,19 +4604,56 @@ and (max-aspect-ratio: 10/16)
 			font-weight: 900;
 		}
 
-		/* #navPanelToggle:before {
-			content: '\f0c9';    <!-- bar next to the menu -->
-			margin-right: 0.5rem;
+
+		#navPanelToggle {
+			background-color: black;
+			color: white;
+			box-shadow: 0 0.125rem 0.75rem 0 rgba(0, 0, 0, 0.5);
 		}
 
+			#navPanelToggle:hover {
+				background-color: black;
+				color: #656565;
+			}
+
+		#navPanelToggle:before {
+    			content: '\f0c9';
+    			margin-right: 0.5rem;
+    			color: white;
+		}
+
+			#navPanelToggle:hover:before {
+    				content: '\f0c9';
+    				margin-right: 0.5rem;
+    				color: #656565;
+			}
+
 		#navPanelToggle.alt {
-			background-color: rgba(255, 255, 255, 0.875);
-			box-shadow: 0 0.125rem 0.75rem 0 rgba(30, 37, 45, 0.25);
-			color: #212931;
-		} 
+			background-color: white;
+			color: black;
+			box-shadow: 0 0.125rem 0.75rem 0 rgba(0, 0, 0, 0.5);
+		}
+
 			#navPanelToggle.alt:hover {
-				background-color: black !important; <!-- hover for the bar next to the menu -->
-			} */
+				background-color: white;
+				color: #656565;
+			}
+
+		#navPanelToggle.alt:before {
+    			content: '\f0c9';
+    			margin-right: 0.5rem;
+    			color: black;
+		}
+
+			#navPanelToggle.alt:hover:before {
+    				content: '\f0c9';
+    				margin-right: 0.5rem;
+    				color: #656565;
+			}
+
+
+
+
 
 		@media screen {
 
@@ -4667,7 +4704,7 @@ and (max-aspect-ratio: 10/16)
 		}
 
 			#navPanel .links li {
-				border-top: 0;
+				border-bottom: solid 1px black;
 			}
 
 				#navPanel .links li a {
@@ -4676,7 +4713,7 @@ and (max-aspect-ratio: 10/16)
 					font-family: "Source Sans Pro", Helvetica, sans-serif;
 					font-size: 0.9rem;
 					font-weight: 900;
-					color: black;
+					/*color: black;*/
 					letter-spacing: 0.075em;
 					padding: 0.75rem 0rem;
 					text-align: center;
@@ -4768,6 +4805,7 @@ and (max-aspect-ratio: 10/16)
 			-webkit-transform: translateX(0rem);
 			-ms-transform: translateX(0rem);
 			transform: translateX(0rem);
+			/*box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.2);*/
 			visibility: visible;
 		}
 
