@@ -3353,7 +3353,6 @@ textarea {
 		-webkit-justify-content: -webkit-flex-end;
 		-ms-justify-content: -ms-flex-end;
 		justify-content: flex-end;
-		padding-bottom: 5rem;
 		-moz-transition: opacity 1s ease, -moz-transform 1s ease;
 		-webkit-transition: opacity 1s ease, -webkit-transform 1s ease;
 		-ms-transition: opacity 1s ease, -ms-transform 1s ease;
@@ -3505,43 +3504,22 @@ textarea {
 				opacity: 0;
 			}
 
-		@media screen and (max-width: 980px) {
+
+		@media screen and (orientation: landscape) {
 
 			#intro {
-				/*padding: 4rem 4rem 2rem 4rem ;*/
-				min-height: 100vh;
+				padding-bottom: 5rem;
+
 			}
-
-				#intro p br {
-					display: none;
-				}
-
-				#intro + #header {
-					margin-top: -14rem;
-				}
 		}
 
-		@media screen and (max-width: 736px) {
+		@media screen and (orientation: portrait) {
 
 			#intro {
-				/*padding: 3rem 2rem 1rem 2rem;*/
-				min-height: 100vh;
+				padding-bottom: 10rem;
+
 			}
-
-				#intro h1 {
-					font-size: 3.25rem;
-					line-height: 1.1;
-					margin-bottom: 1rem;
-				}
-
-				#intro p {
-					font-size: 1rem;
-					margin-top: 0rem;
-				}
-
-
 		}
-
 
 
 /* Header */
