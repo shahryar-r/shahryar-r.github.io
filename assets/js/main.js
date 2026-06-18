@@ -128,7 +128,7 @@
 
 			// Change toggle styling once we've scrolled past the intro.
 				$intro.scrollex({
-					bottom: '0',
+					bottom: '10%',
 					enter: function() {
 						$navPanelToggle.removeClass('alt');
 					},
