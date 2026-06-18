@@ -3712,8 +3712,8 @@ textarea {
 
 	#main {
 		position: relative;
-		margin: 0 auto;
-		width: calc(100% - 4rem);
+		margin: auto;
+		width: calc(100% - 2rem);
 		z-index: 2;
 	}
 
@@ -3790,7 +3790,7 @@ textarea {
 			display: -ms-flex;
 			display: flex;
     			flex-direction: column;
-    			gap: 2rem;
+    			gap: 1rem;
 			text-align: center;
 			width: 100%;
 		}
@@ -3804,18 +3804,59 @@ textarea {
 				-webkit-flex-grow: 0;
 				-ms-flex-grow: 0;
 				flex-grow: 0;
-				padding: 2.5rem;
-    				border-radius: 50px;
+				padding: 2.5rem 2.5rem 2.5rem 2.5rem;
+    				border-radius: 1rem;
 				box-shadow: 0 0 0.75rem 0.25rem rgba(0, 0, 0, 0.5);
 				background-color: white;
+    				display: grid;
+    				grid-template-columns: 1fr 1fr;
+    				grid-template-areas:
+        				"image title"
+        				"image description";
+    				gap: 1rem;
+    				align-items: start;
 			}
 
 
-				#main > .posts > article .image {
-					max-width: 25rem;
-					margin-left: auto;
-					margin-right: auto;
+				#main > .posts > article .title {
+    					grid-area: title;
 				}
+
+					#main > .posts > article .title h2 {
+    						margin: 0;
+						padding: 0;
+					}
+
+				#main > .posts > article .image {
+    					grid-area: image;
+				}
+
+					#main > .posts > article .image img {
+    						width: 100%;
+    						height: auto;
+						display: block;
+					}
+
+				#main > .posts > article .description {
+    					grid-area: description;
+				}
+
+					#main > .posts > article .title p {
+    						margin: 0;
+						padding: 0;
+					}
+
+				@media (max-width: 980px) {
+
+    					#main > .posts > article {
+        					grid-template-columns: 1fr;
+        					grid-template-areas:
+            						"title"
+            						"image"
+            						"description";
+    						}
+				}
+
 
 
 /* Footer */
