@@ -1,7 +1,7 @@
 @import url(fontawesome-all.min.css);
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital@0;1&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,700;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,700;1,700&display=swap');
 
 
 html, body, div, span, applet, object,
@@ -158,19 +158,13 @@ textarea {
 	}
 
 	body, input, select, textarea {
-		font-family: "Nunito", Georgia, serif;
+		font-family: sans-serif, Georgia, serif;
 		font-weight: 400;
 		font-style: normal;
 		font-size: 1rem;
 		line-height: 2;
 	}
 
-/*
-  font-family: "Nunito", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 700;
-  font-style: normal;
-*/
 
 	a {
 		-moz-transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
@@ -2396,7 +2390,7 @@ textarea {
 			display: inline-block;
 			font-size: 1rem;
 			letter-spacing: 0;
-			font-family: "Nunito", Georgia, serif;
+			font-family: sans-serif, Georgia, serif;
 			text-transform: none;
 			font-weight: 300;
 			padding-left: 2.8rem;
@@ -3801,13 +3795,13 @@ textarea {
 				-webkit-flex-grow: 0;
 				-ms-flex-grow: 0;
 				flex-grow: 0;
-				padding: 1rem 10rem 1rem 2.5rem;
+				padding: 1rem 2.5rem 1rem 2.5rem;
     				border-radius: 0;
 				box-shadow: none;
 				background-color: white;
     				display: flex;
 				width: 100%;
-				font-family: "Courier New", Arial;
+				font-family: "Times New Roman", Arial;
 				font-size: 1rem;
 			}
 
