@@ -2572,6 +2572,19 @@ textarea {
 
 /* Image */
 
+
+img {
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.2);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/*
+
 	.image {
 		border: 0;
 		display: inline-block;
@@ -2660,6 +2673,7 @@ textarea {
 			transform: scale(1.05);
 		}
 
+*/
 
 
 /* Actions */
