@@ -2828,7 +2828,7 @@ textarea {
 
 		dl dt {
 			display: block;
-			font-weight: 600;
+			font-weight: 700;
 			margin: 0 0 1rem 0;
 		}
 
@@ -3807,7 +3807,7 @@ textarea {
 				background-color: white;
     				display: flex;
 				width: 100%;
-				font-family: Courier, arial;
+				font-family: "Courier New", Arial;
 				font-size: 1rem;
 			}
 
