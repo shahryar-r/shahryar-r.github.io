@@ -3851,6 +3851,13 @@ textarea {
 					vertical-align: middle;
 				}
 
+
+				#main > .posts > article.featured p {
+					text-align: left;
+
+				}
+
+
 			@media (max-width: 980px) {
 
     				#main > .posts > article {
