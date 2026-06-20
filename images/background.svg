@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" shape-rendering="crispEdges">
+  <rect width="100" height="100" fill="none"/>
+
+  <!-- grid lines -->
+  <g stroke="white" opacity="0.5" stroke-width="0.5">
+    <!-- vertical -->
+    <path d="M10 0V100"/>
+    <path d="M20 0V100"/>
+    <path d="M30 0V100"/>
+    <path d="M40 0V100"/>
+    <path d="M50 0V100"/>
+    <path d="M60 0V100"/>
+    <path d="M70 0V100"/>
+    <path d="M80 0V100"/>
+    <path d="M90 0V100"/>
+
+    <!-- horizontal -->
+    <path d="M0 10H100"/>
+    <path d="M0 20H100"/>
+    <path d="M0 30H100"/>
+    <path d="M0 40H100"/>
+    <path d="M0 50H100"/>
+    <path d="M0 60H100"/>
+    <path d="M0 70H100"/>
+    <path d="M0 80H100"/>
+    <path d="M0 90H100"/>
+  </g>
+
+  <!-- border line (designed to NOT create seams) -->
+  <path d="M0 0H100V100H0Z" fill="none" stroke="white" stroke-opacity="1" stroke-width="0.5"/>
+</svg>
