@@ -200,9 +200,18 @@ textarea {
 		margin: 0 0 0 0;
 	}
 
+
+	.reference-article {
+    		display: flex;
+    		gap: 1rem;
+	}
+
+
 	.reference-article a {
     		color: blue;
-    		text-decoration: underline;
+    		display: inline-flex;
+    		align-items: center;
+		gap: 0.25rem;
 	}
 
 	h1, h2, h3, h4, h5, h6 {
