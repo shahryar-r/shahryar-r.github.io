@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital@0;1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,700;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 
 html, body, div, span, applet, object,
@@ -290,14 +291,15 @@ textarea {
 		padding: 0.5rem 0 0.5rem 2rem;
 	}
 
+
+
 	code {
-		border: solid 2px;
-		font-family: "Courier New", monospace;
-		font-size: 0.9rem;
-		margin: 0 0.25rem;
-		padding: 0.25rem 0.65rem;
+  		font-family: "JetBrains Mono", monospace !important;
+  		font-size: 0.7rem !important;
 	}
 
+
+/*
 	pre {
 		-webkit-overflow-scrolling: touch;
 		font-family: "Courier New", monospace;
@@ -308,9 +310,18 @@ textarea {
 		pre code {
 			display: block;
 			line-height: 1.75;
-			padding: 1rem 1.5rem;
-			overflow-x: auto;
+    			background: #1e1e1e;
+    			color: #d4d4d4;
+    			padding: 1rem;
+    			border-radius: 6px;
+    			overflow-x: auto;   /* horizontal scroll */
+    			overflow-y: auto;   /* vertical scroll if needed */
+    			max-height: 400px;  /* optional limit */
+
 		}
+
+*/
+
 
 	hr {
 		border: 0;
@@ -368,10 +379,6 @@ textarea {
 		border-left-color: black;
 	}
 
-	code {
-		background: black;
-		border-color: black;
-	}
 
 	hr {
 		border-bottom-color: black;
@@ -3787,6 +3794,7 @@ textarea {
 		}
 
 
+
 			#main > .posts > article {
 				padding: 2.5rem 2.5rem 2.5rem 2.5rem;
 				width: calc(100% - 2rem);
@@ -3797,10 +3805,15 @@ textarea {
     				gap: 1rem;
     				grid-template-columns: 1fr 1fr;
     				grid-template-areas:
-        				"image title"
-        				"image description"
+        				"result title"
+        				"result description"
 			}
 
+
+
+			#main > .posts > article > * {
+  				min-width: 0;
+			}
 
 
 				#main > .posts > article .title {
@@ -3817,18 +3830,38 @@ textarea {
 						padding: 0;
 					}
 
-				#main > .posts > article .image {
-    					grid-area: image;
+				#main > .posts > article .result {
+    					grid-area: result;
     					display: flex;
     					flex-direction: column;
     					gap: 0.5rem;
 				}
 
-					#main > .posts > article .image img {
+
+					#main > .posts > article .result img {
     						width: 100%;
-    						height: auto;
+    						height: auto;											;
 						display: block;
 					}
+
+
+					#main > .posts > article .result pre.code_editor {
+						display: block;
+						line-height: 1.5;
+						padding: 1rem;
+						margin: 0 0 2rem 0;
+						border-radius: 0px;
+						overflow-x: auto;
+						overflow-y: auto;
+						max-height: 50vh;
+						white-space: pre !important;
+						-webkit-overflow-scrolling: touch;
+						background: #f8f8f8;
+						color: #333333;
+						border-color: #dddddd;
+						border: 1px solid;
+					}
+
 
 				#main > .posts > article .description {
     					grid-area: description;
@@ -3838,6 +3871,22 @@ textarea {
     						margin: 0;
 						padding: 0;
 					}
+
+
+
+
+
+	.inline_code {
+		display: inline;
+		border-radius: 4px;
+		padding: 0.15rem 0.4rem;
+		margin: 0 0.15rem;
+		background: #f8f8f8;
+		color: #333333;
+		border-color: #dddddd;
+		border: 1px solid;
+	}
+
 
 
 
@@ -3881,7 +3930,7 @@ textarea {
         				grid-template-columns: 1fr;
         				grid-template-areas:
             					"title"
-            					"image"
+            					"result"
             					"description";
     						}
 
