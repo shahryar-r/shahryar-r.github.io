@@ -141,7 +141,201 @@
 								<article class="one-image" style="--title-gap: 0rem;">
 
         								<div class="result">
-            									<img src="images/pic02.jpg" alt="" />
+
+            									<pre class="code_editor">
+											<code class="language-python">
+#    ............................................
+#                      import_cmg_data
+#    ............................................
+
+import numpy as np
+from datetime import datetime
+
+
+def import_cmg_data(cell_number, cmg_txt_path):
+    nx, ny, nz = cell_number        
+    blocks = {}
+    current_block = {}
+    current_time = None
+    first_variable_name = None
+    
+    i = 0
+    j = 0
+    k = 0
+
+    skip_until_k = True
+    
+    if not cmg_txt_path:
+        print("dataset not provided")
+        return None
+        
+    else:
+        with open(cmg_txt_path, 'r') as f:
+            for line in f:
+                line = line.strip()
+                if not line:
+                    continue
+                if 'TIME =' in line:
+                    skip_until_k = True
+                    parts = line.split()
+                    if current_time is None:
+                        first_timestep = parts[4]
+                    difference = datetime.strptime(parts[4], '%Y-%b-%d').year - datetime.strptime(first_timestep, '%Y-%b-%d').year
+                    current_time = round(float(difference))
+                    if current_time not in blocks:
+                        blocks[current_time] = {}
+                    continue
+                elif 'RESULTS PROP' in line and 'Units:' in line:
+                    start = line.find('RESULTS PROP') + len('RESULTS PROP')
+                    end = line.find('Units', start)
+                    variable_name = line[start:end].strip()
+                    if first_variable_name is None:
+                        first_variable_name = variable_name
+                    continue
+                elif 'K =' in line:
+                    skip_until_k = False
+                    parts = line.replace("**", "").replace(" ", "").split(",")
+                    k = int(parts[0].split("=")[1])
+                    j = int(parts[1].split("=")[1])
+                    i = 1
+                    continue
+                elif not skip_until_k:
+                    parts = line.split()
+                    if 'index' not in blocks[current_time]:
+                        blocks[current_time]['index'] = []
+                    if variable_name not in blocks[current_time]:
+                        blocks[current_time][variable_name] = []
+                    for value in parts:
+                        if variable_name == first_variable_name:
+                            blocks[current_time]['index'].append((i, j, k))
+                        blocks[current_time][variable_name].append(float(value))
+                        i += 1
+            
+        for timestep, block in blocks.items():
+            for name, values in block.items():
+                block[name] = np.array(values)
+
+    print('Time steps in cmg file:', list(blocks.keys()))
+    print('Variables in cmg file:', list(next(iter(blocks.values())).keys()))
+    print('===================================================================')
+    return blocks
+
+
+
+
+											</code>
+										</pre>
+
+            									<pre class="code_editor">
+											<code class="language-python">
+#     ............................................
+#                      import_toughreact_data
+#     ............................................
+
+import numpy as np
+
+
+def import_toughreact_data(cell_number, *address):
+    flow_tec_path = address[0]
+    
+    if len(address) > 1:
+        mineral_tec_path = address[1] 
+    else:
+        mineral_tec_path = None
+    
+    if len(address) > 2:
+        concentration_tec_path = address[2] 
+    else:
+        concentration_tec_path = None
+
+    nx, ny, nz = cell_number
+    
+    def _read_tec(filepath):
+        
+        blocks = {}
+        current_block = {}
+        current_time = None
+        var_names = []
+        with open(filepath, 'r') as f:
+            for line in f:
+                line = line.strip()
+                if not line:
+                    continue
+                if 'Variables=' in line:
+                    # extract variable names in quotes
+                    parts = line.replace('Variables=', '').split('"')
+                    for i in parts:
+                        if i and not i.isspace():
+                            var_names.append(i)
+                elif 'Zone T=' in line:
+                    # save previous block
+                    if current_time is not None and current_block:
+                        blocks[current_time] = current_block
+                    # reset
+                    current_block = {}
+                    for name in var_names:
+                        current_block[name] = []    
+                    # parse time between T=" and " sec
+                    start = line.find('Zone T=') + len('Zone T=')
+                    end = line.find('sec', start)
+                    t = line[start:end].strip().strip('"')
+                    # handle zero-time special-case
+                    if t == '1.00000000E+00':
+                        t = '0.00000000E+00'
+                    current_time = round(float(t)/3.15360000E+07)
+                else:
+                    # data lines
+                    parts = line.split()
+                    if current_time is not None and len(parts) == len(var_names):
+                        for i, name in enumerate(var_names):
+                            current_block[name].append(float(parts[i]))
+        # final block
+        if current_time is not None and current_block:
+            blocks[current_time] = current_block
+        # reshape and flatten
+        for timestep, block in blocks.items():
+            for name, values in block.items():
+                arr = np.array(values).reshape((nx, ny, nz), order='C')
+                block[name] = arr.flatten(order='F')
+        return blocks
+
+    flow_blocks = _read_tec(flow_tec_path)
+    blocks = flow_blocks
+    
+    if mineral_tec_path:
+        mineral_blocks = _read_tec(mineral_tec_path)
+        for timestep in mineral_blocks:
+            if timestep in blocks:
+                blocks[timestep].update(mineral_blocks[timestep])
+            else:
+                blocks[timestep] = mineral_blocks[timestep]
+    else:
+        mineral_blocks = None
+        print("Mineral file not provided")
+
+    if concentration_tec_path:
+        concentration_blocks = _read_tec(concentration_tec_path)
+        for timestep in concentration_blocks:
+            if timestep in blocks:
+                blocks[timestep].update(concentration_blocks[timestep])
+            else:
+                blocks[timestep] = concentration_blocks[timestep]
+    else:
+        concentration_blocks = None
+        print("Concentration file not provided")
+
+    
+    
+    print('Time steps in tough file:', list(blocks.keys()))
+    print('Variables in tough file:', list(next(iter(blocks.values())).keys()))
+    print('===================================================================')
+  
+    return blocks
+
+											</code>
+										</pre>
+
+
         								</div>
 
 									<header class="title">
@@ -150,6 +344,7 @@
 
         								<div class="description">
             									<p>
+										Reactive-transport modelling of CO2 storage using TOUGHREACT and CMG requires the visualization of simulation results through a single package for consistency in comparison. The first step in the post-processing visualization is to read the raw output files of simulators line by line, including data loading, character-level parsing, and data structuring. As simulation outcomes are large datasets, this workflow cannot be executed manually. Therefore, I developed Python pipelines, <em><strong>import_cmg_data()</strong></em> and <em><strong>import_toughreact_data()</strong></em>, to automate these data processing tasks. These automation workflows are later employed for 2D and 3D visualization with Matplotlib and PyVista to support consistent analysis across simulation cases.
 										</p>
         								</div>
 								</article>
