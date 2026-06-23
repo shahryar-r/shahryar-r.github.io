@@ -375,25 +375,24 @@ def import_toughreact_data(cell_number, *address):
 
             									<pre class="code_editor">
 											<code class="language-fortran">
-
-C
+c     ............................................
+c                      MODULE t2f
+c     ............................................
+c
       SUBROUTINE INPUT
-C
-C     ............................................
-C                      MODULE t2f
-C     ............................................
-C
-C-----READ ALL DATA PROVIDED THROUGH THE INPUT FILE.
-
-
-C-----THIS ROUTINE COMPUTES RELATIVE PERMEABILITIES FOR LIQUID
-C     AND GASEOUS PHASES.
-C
-C
+c
+c
+c-----READ ALL DATA PROVIDED THROUGH THE INPUT FILE.
+c
+c
+c-----THIS ROUTINE COMPUTES RELATIVE PERMEABILITIES FOR LIQUID
+c     AND GASEOUS PHASES.
+c
+c
       implicit real*8  (a-h,o-z)
       implicit integer*8 (i-n)
       INCLUDE 'flowpar_v4.inc'
-C
+c
       COMMON/P3/DELX((MNK+1)*MNEL)
       COMMON/RPCAP/IRP(MAXMAT),RP(7,MAXMAT),ICP(MAXMAT),CP(7,MAXMAT),
      XIRPD,RPD(7),ICPD,CPD(7)
@@ -402,7 +401,7 @@ C
 c       Added definitions below
       double precision sg,repl,repg,sg0
       integer*8 nmat,k,nloc
-C
+c
       SAVE ICALL
       DATA ICALL/0/
       ICALL=ICALL+1
@@ -416,23 +415,23 @@ c  899 FORMAT(6X,'RELP     1.0      26 July      1995',6X,
      X' OF SATURATION'/
      x47X,'for IRP=7, use Corey-krg when RP(4).ne.0, with Sgr',
      x' = RP(4)')
-C
+c
       SL=1.d0-SG
 c      GOTO(10,11,12,12,13,14,15,16),IRP(NMAT)
 c Added new option 11, from ITOUGH (S. Finsterle)
       GOTO(10,11,12,12,13,14,15,16,17,18,19),IRP(NMAT)
    10 CONTINUE
-C-----LINEAR FUNCTIONS.
-C
-C     CHECK IF INCREMENT NEEDS TO BE ADJUSTED AT LOWER LIQUID CUTOFF.
+c-----LINEAR FUNCTIONS.
+c
+c     CHECK IF INCREMENT NEEDS TO BE ADJUSTED AT LOWER LIQUID CUTOFF.
       IF(K.NE.3) GOTO 20
       IF((SL-RP(1,NMAT))*(1.d0-SG0-RP(1,NMAT)).GE.0.d0) GOTO 20
-C     ADJUST INCREMENT.
+c     ADJUST INCREMENT.
       DELX(NLOC+2)=-DELX(NLOC+2)
       SG=SG0+DELX(NLOC+2)
       SL=1.d0-SG
    20 CONTINUE
-C
+c
 !els12/02/15      REPL=(SL-RP(1,NMAT))/(RP(3,NMAT)-RP(1,NMAT))
       REPL=(SL-RP(1,NMAT))/rpsavpar(1,nmat)
       IF(SL.GE.RP(3,NMAT)) REPL=1.d0
@@ -441,20 +440,20 @@ C
       REPG=(SG-RP(2,NMAT))/rpsavpar(2,nmat)
       IF(SG.GE.RP(4,NMAT)) REPG=1.d0
       IF(SG.LE.RP(2,NMAT)) REPG=0.d0
-C
+c
       RETURN
-C
+c
    11 CONTINUE
-C-----RELATIVE PERMEABILITY OF PICKENS ET AL.
-C
+c-----RELATIVE PERMEABILITY OF PICKENS ET AL.
+c
       REPG=1.d0
       REPL=(1.d0-SG)**RP(1,NMAT)
-C
+c
       RETURN
-C
+c
    12 CONTINUE
-C-----COREY@S OR GRANT@S CURVES.
-C
+c-----COREY@S OR GRANT@S CURVES.
+c
 !els12/02/15      SSTAR=(SL-RP(1,NMAT))/(1.d0-RP(1,NMAT)-RP(2,NMAT))
       SSTAR=(SL-RP(1,NMAT))/rpsavpar(1,nmat)
       REPL=SSTAR**1.70E0
@@ -470,46 +469,45 @@ C
   102 CONTINUE
       IF(IRP(NMAT).EQ.4) REPG=1.d0-REPL
       RETURN
-C
+c
    13 CONTINUE
-C-----BOTH PHASES ARE PERFECTLY MOBILE.
-C
+c-----BOTH PHASES ARE PERFECTLY MOBILE.
+c
       REPL=1.d0
       REPG=1.d0
-C
+c
       RETURN
    14 CONTINUE
-C-----RELATIVE PERMEABILITIES OF FATT AND KLIKOFF (1959), AS REPORTED
-C     BY K. UDELL (BERKELEY, 1982).
-C
+c-----RELATIVE PERMEABILITIES OF FATT AND KLIKOFF (1959), AS REPORTED
+c     BY K. UDELL (BERKELEY, 1982).
+c
       SS=0.d0
 !els12/02/15      IF(SL.GT.RP(1,NMAT)) SS=(SL-RP(1,NMAT))/(1.d0-RP(1,NMAT))
       IF(SL.GT.RP(1,NMAT)) SS=(SL-RP(1,NMAT))/rpsavpar(1,nmat)
       REPL=SS**3
       REPG=(1.d0-SS)**3
       RETURN
-C
+c
    15 CONTINUE
-C-----RELATIVE PERMEABILITY OF VAN GENUCHTEN, SOIL SCI. SOC. AM. J. 44,
-C     PP. 892-898, 1980.
-C
+c-----RELATIVE PERMEABILITY OF VAN GENUCHTEN, SOIL SCI. SOC. AM. J. 44,
+c     PP. 892-898, 1980.
+c
       IF(SL.GE.RP(3,NMAT)) GOTO 150
 !els12/02/15      SS=(SL-RP(2,NMAT))/(RP(3,NMAT)-RP(2,NMAT))
       SS=(SL-RP(2,NMAT))/rpsavpar(1,nmat)
       REPL=0.d0
-C
+c
 											</code>
 										</pre>
 
             									<pre class="code_editor">
 											<code class="language-fortran">
-
+c     ............................................
+c                      MODULE geochem
+c     ............................................
 c
       subroutine hkfpar(T,tk,adh,bdh,bi,bil)
 c
-C     ............................................
-C                      MODULE geochem
-C     ............................................
 c
 c
 c   bhat NaCl (b NaCl = bhat/(2.303RT)) from Table 29 (bi here)
