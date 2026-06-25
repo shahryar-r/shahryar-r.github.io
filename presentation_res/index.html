@@ -1,29 +1,99 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-<head>
-  <title>Protected Page</title>
-</head>
-<body>
+	<head>
+		<title>Shahryar – Personal Website</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
 
-<script>
-const password = "reservoir@2026";
+	</head>
 
-function checkPassword() {
-  const input = document.getElementById("pw").value;
+	<body class="no-background">
 
-  if (input === password) {
-    document.body.innerHTML = "<h1>Loading presentation...</h1>";
-    setTimeout(() => {
-      document.body.innerHTML = "<h1>Reservoir Simulation</h1><p>This is the page for the presentation.</p>";
-    }, 800);
-  } else {
-    alert("Wrong password!");
-  }
-}
-</script>
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
 
-<h2>Login Required</h2>
-<input type="password" id="pw" placeholder="Password">
-<button onclick="checkPassword()">Enter</button>
-</body>
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="../index.html">Home</a></li>
+							<li>
+								<a href="#" class="submenu-toggle">Presentation<span class="arrow">▶</span></a>
+        							<ul class="sublinks">
+            								<li><a href="../presentation_ccs/index.html">CO2 Storage</a></li>
+            								<li class="active"><a href="../presentation_res/index.html">Reservoir Simulation</a></li>
+        							</ul>
+							</li>
+							<li><a href="../contact.html">Contact</a></li>
+						</ul>
+
+						<ul class="icons">
+
+							<li>
+    								<a href="https://github.com/shahryar-r/"
+									target="_blank" rel="noopener noreferrer"
+       									class="icon brands fa-github" title="Github">
+         							</a>
+							</li>
+						
+							<li>
+    								<a href="https://scholar.google.com/citations?hl=en&user=whnMnfAAAAAJ&view_op=list_works&sortby=pubdate"
+ 									target="_blank" rel="noopener noreferrer"
+									class="icon brands fa-google-scholar" title="Google Scholar">
+         							</a>
+							</li>
+
+							<li>
+    								<a href="mailto:rashidis@uni.coventry.ac.uk"
+       									class="icon solid fa-envelope" title="Email">
+         							</a>
+							</li>
+						</ul>
+
+
+					</nav>
+
+
+				<!-- Footer -->
+				<footer id="footer">
+					<section>
+						<form method="post">
+							<div class="fields">
+								<div class="field">
+									<h3>Presentation - Reservoir Simulation</h3>
+									<label for="password">Password</label>
+									<input type="password" id="pw">
+								</div>
+							</div>
+
+
+							<button id="loginBtn"
+        							type="button"
+        							data-password="res@2026"
+        							data-target="../index.html">
+    								Login
+							</button>
+						</form>
+					</section>
+				</footer>
+
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul>
+							<li>&copy; 2026 Shahryar. All rights reserved.</li>
+						</ul>
+					</div>
+			</div>
+
+		<!-- Scripts -->
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/jquery.scrollex.min.js"></script>
+			<script src="../assets/js/jquery.scrolly.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+	</body>
 </html>
