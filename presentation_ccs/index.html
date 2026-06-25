@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Protected Page</title>
+</head>
+<body>
+
+<script>
+const password = "ccs@2026";
+
+function checkPassword() {
+  const input = document.getElementById("pw").value;
+
+  if (input === password) {
+    document.body.innerHTML = "<h1>Loading presentation...</h1>";
+    setTimeout(() => {
+      document.body.innerHTML = "<h1>Carbon Capture and Storage</h1><p>This is the page for the presentation.</p>";
+    }, 800);
+  } else {
+    alert("Wrong password!");
+  }
+}
+</script>
+
+<h2>Login Required</h2>
+<input type="password" id="pw" placeholder="Password">
+<button onclick="checkPassword()">Enter</button>
+</body>
+</html>
