@@ -4532,10 +4532,12 @@ textarea {
 
 		#navPanel .links {
 			list-style: none;
-			padding-left: 0;
+			padding: 0;
 		}
 
 			#navPanel .links li {
+    				margin: 0;
+				padding: 0;
 				border-bottom: 0;
 			}
 
@@ -4547,9 +4549,9 @@ textarea {
 					font-weight: 900;
 					/*color: black;*/
 					letter-spacing: 0.075em;
-					padding: 0.5rem 0rem;
-					text-align: center;
-					text-transform: uppercase;
+					padding: 0.5rem 0.5rem;
+					text-align: left;
+					text-transform: none;
     					border-radius: 10px;
 					transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 				}
@@ -4563,6 +4565,47 @@ textarea {
 
 				#navPanel .links li:first-child {
 					border-top: 0;
+				}
+
+
+			#navPanel .links .sublinks {
+    				display: none;
+    				list-style: none;
+    				margin: 0rem;
+    				padding: 0rem;
+			}
+
+				#navPanel .links .sublinks li {
+    					margin: 0;
+					padding: 0;
+				}
+
+				#navPanel .links .sublinks li a {
+    					font-size: 0.7rem;
+    					font-weight: 900;
+    					text-transform: none;
+    					text-align: left;
+    					padding: 0rem 1.5rem;
+				}
+
+				#navPanel .links li.open > .sublinks {
+    					display: block;
+				}
+
+
+				#navPanel .links li .arrow {
+					display: inline-block;
+					line-height: 1;
+    					vertical-align: middle;
+					margin-left: 0.3rem;
+					transition: transform 0.2s;
+
+				}
+
+				#navPanel .links li.open .arrow {
+    					transform: rotate(90deg);
+   					display: inline-block;
+    					transition: transform 0.2s;
 				}
 
 		#navPanel .close {
