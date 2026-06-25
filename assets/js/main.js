@@ -139,6 +139,31 @@
 				});
 
 
+			document.addEventListener('DOMContentLoaded', function () {
+
+				document.querySelectorAll('#navPanel .sublinks li.active').forEach(li => {
+    					li.closest('ul.sublinks').parentElement.classList.add('open');
+				});
+			document.querySelectorAll('.submenu-toggle').forEach(link => {
+				link.addEventListener('click', function (e) {
+            				e.preventDefault();
+
+            				const li = this.parentElement;
+
+            		document.querySelectorAll('#navPanel .links li.open')
+                		.forEach(item => {
+                		    if (item !== li) {
+                        		item.classList.remove('open');
+                    			}
+                		});
+
+					li.classList.toggle('open');
+        			});
+    			});
+
+		});
+
+
 		// Panel.
 			$navPanel = $(
 				'<div id="navPanel">' +
@@ -168,6 +193,28 @@
 				&&	browser.osVersion < 10)
 					$navPanel
 						.css('transition', 'none');
+
+
+			document.addEventListener('DOMContentLoaded', () => {
+
+    				const loginBtn = document.getElementById('loginBtn');
+    					if (!loginBtn) return;
+    					loginBtn.addEventListener('click', () => {
+
+        				const entered = document.getElementById('pw').value;
+        				const requiredPassword = loginBtn.dataset.password;
+        				const targetPage = loginBtn.dataset.target;
+
+        				if (entered === requiredPassword) {
+            				window.location.href = targetPage;
+        				} else {
+            					alert('Wrong password!');
+        					}
+
+    					});
+
+				});
+
 
 	// Intro.
 		var $intro = $('#intro');
