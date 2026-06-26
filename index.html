@@ -90,11 +90,11 @@
 								<article style="--title-gap: 0rem;">
 
         								<div class="result">
-            									<img src="images/pic02.jpg" alt="" />
+            									<img src="images/81.gif" alt="" />
         								</div>
 
 									<header class="title">
-										<h2><a>Generated 3D time-evolving visualizations of simulation outputs</a></h2>
+										<h2><a>Generated 3D time-evolving visualizations of simulation outputs in Python</a></h2>
 									</header>
 
         								<div class="description">
@@ -119,7 +119,7 @@
 
         								<div class="description">
             									<p>
-The Client was a home-business owner in Aberdeen who sold products through local markets as well as Instagram and Etsy. The client sold four different products, with <strong><em>Product #2</em></strong> being the largest contributor to total sales. The analysis also showed that sales peaked during the summer, and Etsy and Instagram were preferred over in-person marketplaces, contributing 78% of sales. Therefore, I think further investment in online sales optimization may provide the greatest opportunity for growth by increasing customer engagement and sales. Although online channels were the primary drivers of sales, I did not make any conclusion about the primary buyers due to the lack of customer demographic information. Ultimately, I advised the client to consider launching an additional product within the category of <strong><em>Product #2</em></strong> in the summer period if there is an intention to grow the business.<note><em><strong>Confidentiality Note:</strong> Product names and selected business data have been anonymized to protect client privacy.</em></note>
+The Client was a home-business owner in Aberdeen who sold products through local markets as well as Instagram and Etsy. The client sold four different products, with <strong><em>Product #2</em></strong> being the largest contributor to total sales. The analysis also showed that sales peaked during the summer, and Etsy and Instagram were preferred over in-person marketplaces, contributing 78% of sales. Therefore, I think further investment in online sales optimization may provide the greatest opportunity for growth by increasing customer engagement and sales. Although online channels were the primary drivers of sales, I did not make any conclusion about the primary buyers due to the lack of customer demographic information. Ultimately, I advised the client to consider launching an additional product within the category of <strong><em>Product #2</em></strong> in the summer period if there is an intention to grow the business.<note><em><strong>Note:</strong> Product names and selected business data have been anonymized to protect client privacy.</em></note>
 										</p>
         								</div>
 								</article>
@@ -176,9 +176,9 @@ Reliable prediction of subsurface CO2 behavior is critical for the safe deployme
 
             									<pre class="code_editor">
 											<code class="language-python">
-#    ............................................
-#                      import_cmg_data
-#    ............................................
+# .........................................................
+#  Automation pipeline for processing data from CMG
+# .........................................................
 
 import numpy as np
 from datetime import datetime
@@ -258,11 +258,12 @@ def import_cmg_data(cell_number, cmg_txt_path):
 											</code>
 										</pre>
 
+
             									<pre class="code_editor">
 											<code class="language-python">
-#     ............................................
-#                      import_toughreact_data
-#     ............................................
+# .........................................................
+#  Automation pipeline for processing data from TOUGHREACT
+# .........................................................
 
 import numpy as np
 
@@ -389,9 +390,12 @@ Reactive-transport modelling of CO2 storage using TOUGHREACT and CMG requires th
 
             									<pre class="code_editor">
 											<code class="language-fortran">
-c     ............................................
-c                      MODULE t2f
-c     ............................................
+c .........................................................
+c  Incorporating specific relative permeability fucntions
+c .........................................................
+c .........................................................
+c                      MODULE_t2f
+c .........................................................
 c
       SUBROUTINE INPUT
 c
@@ -516,9 +520,12 @@ c
 
             									<pre class="code_editor">
 											<code class="language-fortran">
-c     ............................................
-c                      MODULE geochem
-c     ............................................
+c .........................................................
+c  Incorporating ideal activity model
+c .........................................................
+c .........................................................
+c                      MODULE_geochem
+c .........................................................
 c
       subroutine hkfpar(T,tk,adh,bdh,bi,bil)
 c
@@ -684,290 +691,7 @@ c
         gamsdl(i) = 0.d0
        enddo
 c
-c     hkf parameters at given temperature
-c     call moved to routine assign to avoid recalc at all iterations
-c       adh in kg**0.5 mol**(-0.5)  (this is A Debye-Huckel)
-c       bdh in kg**0.5 mol**(-0.5) Angstrom**(-1) (this is B Debye-Huckel)
-c       bi  in kg/mol * 1e+3 (this is bhat (NaCl) )
-c       bil in kg/mol * 1e+2 (this is bil (Na+ Cl-) )
-c
-      no_ch=0
-cels9/29/09 not used      naqt=npri+naqx
-      naqt=npri+naqx   !ns12/2017 now needed
-c
-c
-c ---calculate ionic strength and other global concentrations
-c    all concentrations must be in molal scale (mol/kgH2O)
-      sum=0.d0               !to compute true ionic strength
-      sum2=0.d0              !to compute stoichiometric ionic str
-      mstar=0.d0             !total solute in solution
-      mchr=0.d0              !total solute excluding neutral species
-!els4/5/16 not used now      cpwmax = 0.d0
-c     primary species contribution
-cns3/2010      do i=1,npri
-      do i = 1,npaq   !skip sorption species  
-        ct(i)=cpw(i)
-!els12/21/15        if(ct(i).lt.1.0d-16) ct(i)=0.0d0
-!test01/28/16        if(ct(i).lt.1.0d-30) ct(i)=0.0d0
-cns2/17/2012        if(i.ne.nw.and.i.ne.ne.and.NoTrans(i).ne.2) then
-!els01/28/16 Modified for multicomponent diffusion options
-        if(i.ne.nw.and.i.ne.ne.and.NoTrans(i).lt.2) then
-cels5/1/08          zi2 = z(i)*z(i)
-cels11/29/2011          zi2 = zsqi(i)
-cels11/29/2011          sum=sum+zi2*cpw(i)
-cels11/29/2011          sum2=sum2+zi2*u2(i)/xh2o
-          sum=sum+zsqi(i)*cpw(i)
-          sum2=sum2+zsqi(i)*u2(i)/xh2o
-          mstar=mstar+cpw(i)
-          if(z(i).ne.0.d0) mchr=mchr+cpw(i)
-          cpion(i)=cpw(i)
-cels8/23/13 test for ionic strength breaker
-!els4/5/16 not used now          if(cpwmax.lt.cpw(i))cpwmax=cpw(i)
-        endif
-      enddo
-c     secondary species contribution
-      do i=1,naqx
-         nprsec = npri+i
-         ct(nprsec)=cs(i)
-cels6/25/08 this was a bug         if(ct(i).lt.1.0d-16) ct(i)=0.0d0
-!els12/21/15         if(ct(nprsec).lt.1.0d-16) ct(nprsec)=0.0d0
-!test01/28/16         if(ct(nprsec).lt.1.0d-40) ct(nprsec)=0.0d0
-cels5/14/08         sum=sum+z(nprsec)*z(nprsec)*cs(i)
-         sum=sum+zsqi(nprsec)*cs(i)
-         mstar=mstar+cs(i)
-         if(z(nprsec).ne.0.d0) then
-           mchr=mchr+cs(i)
-c        total concentrations excluding neutral species
-          ncp=ncps(i)
-           do n=1,ncp
-             j=icps(i,n)
-             cpion(j)=cpion(j)+stqs(i,n)*cs(i)
-           enddo
-         endif
-      enddo
-      if(sum.lt.0.d0) sum=0.d0
-      str=0.5d0*sum
-c
-cels11/6/12 need to print something out so that we know ionic strength is exceeded
-ccc      if(str.gt.stimax) then
-ccc        no_ch=1
-ccc      if(str.gt.stimax)write(32,404)str,' exceeds max ionic strength',
-ccc     +   ' cpwmax= ',cpwmax,' xh2o= ',xh2o
-!!!
-!!!
-!!!!test        if(str.gt.stimax)no_ch=1
-!!!!test      if(str.gt.stimax)return
-!! now set true ionic strenth to maximum value to force convergence
-        str = dmin1(str,stimax)
-!!
-cels8/23/13 404   format(1x,f10.6,a27)
-!els6/25/15 404   format(1x,f10.6,a27,a9,e12.6,a7,e12.6)
-!els3/22/16 404   format(1x,f10.6,a27,a9,es12.6,a7,es12.6)
-ccc      endif
-c
-cns09/26/2012      str2=str
-cels6/27/08      if(sum2.gt.0.d0) str2=0.5d0*sum2
-cels6/27/08      stroot=dsqrt(str)
-cels6/27/08      stroo2=dsqrt(str2)
-cns09/26/2012      if(sum2.gt.0.d0)then
-cns09/26/2012        str2=0.5d0*sum2
-cns09/26/2012        stroot=dsqrt(str)
-cns09/26/2012        stroo2=dsqrt(str2)
-cns09/26/2012      else
-cns09/26/2012        stroot=dsqrt(str)
-cns09/26/2012        stroo2=stroot
-cns09/26/2012      endif
-      if(str.le.0.d0) str=1.d-20
-      stroot=dsqrt(str)
-!els12/21/15      str2=str
-!els12/21/15      stroo2=stroot
-      if(sum2.gt.0.d0) then
-        str2=0.5d0*sum2
-!! now set stoichiometric ionic strenth to maximum value to force convergence
-        str2 = dmin1(str2,stimax)
-        stroo2=dsqrt(str2)
-!els12/21/15 moved into if block, since if block was already being done
-      else
-        str2=str
-        stroo2=stroot
-      endif
-c
-!!
-c     Conversion factor for molality scale (from eq. 122, 169)
-c     Note, this factor turns out equal to log(H2O mole fraction)
-c     D-H yields gamma for mole fraction scale convention, we
-c     use molality scale convention, therefore needs conversion
-!els01/14/16      capgam=-dlog10(1.d0+0.01801528d0*mstar)
-      capgam=-dlog10(1.d0+0.018015d0*mstar)
-c
-cels10/14/09 not used       if (idryout.eq.2) goto 120   !skip the activity coefficient calculation in case of dryout and I>stimax, aw<0.2
-c
-c     Absolute Born coeff. of H+
-c     omegh=1.66027d+5*z(nh)*z(nh)/a0(nh)
-c
-c ---activity and osmotic coefficients
-c
-c-----------------------------------------------------------
-c----- Pitzer activity coefficient model  ns12/2017
-c-----------------------------------------------------------
-       if(mopr(21).gt.0) then   !pitz
 
-cns08/2016 move call to pitz_tran out of iterations
-        call pitz(mstar,str,stroot,ct,gamp,gams,gampdl,gamsdl)
-
-c--------------------------------------------------------------------
-c ---------HKF Activity coefficient model
-c--------------------------------------------------------------------
-
-       else   !DH
-
-       summt = 0.d0
-cels6/25/08 added tmp vars
-       bdhstrt = bdh*stroot
-       bdhstr2 = bdh*stroo2
-       bdh3str2 = bdh*bdh*bdh*str2
-!els01/14/16       cpgmdms = capgam/(0.0180153d0*mstar)
-       cpgmdms = capgam/(0.018015d0*mstar)
-       bistr = bi*str
-       bistr2 = bi*str2
-       adhstrt = adh*stroot
-cels2/8/2012 initialize lambda
-       lambda=1.d0
-       lambd2=1.d0
-cels6/25/08 revised loop structure       
-c.... Primary species
-cns3/4/2010       do i=1,npri
-       do i=1,npaq
-cels5/22/12 already set to 1 above         gamp(i)=1.0d0
-cels6/26/08         rex=1.81d0
-cels6/26/08         if(z(i).lt.0.d0) rex=1.91d0
-cels11/29/11         zi2 = zsqi(i)
-cels6/26/08         azero = 2.d0*(a0(i) + zabsi(i)*rex)/(zabsi(i)+1.d0)
-cels2/8/2012 move down         lambda=1.d0+bdhstrt*azero(i)
-cels2/8/2012 move down         lambd2=1.d0+bdhstr2*azero(i)
-c
-        if(z(i).ne.0.d0) then
-          lambda=1.d0+bdhstrt*azero(i)
-          lambd2=1.d0+bdhstr2*azero(i)
-cels6/26/08          omega = 1.66027d+5*zi2/a0(i)
-cels6/25/08          gamlog=-adh*zi2*stroot/lambda  +  capgam  +
-cels6/25/08     &    (omega*bi*str + (bil - 0.19d0*(zabsi(i)-1.d0))*str)
-cels11/29/11          gamlog=-adhstrt*zi2/lambda  +  capgam  +
-          gamlog=-adhstrt*zsqi(i)/lambda  +  capgam  +
-     &      (omegahkf(i)*bistr + (bil - zabterm(i))*str)
-cels6/26/08     &    (omega*bistr + (bil - 0.19d0*(zabsi(i)-1.d0))*str)
-c
-          gamp(i)=10.d0**gamlog        !activity coef.
-cels5/1/14 keep versions that don't have to be logged
-          gampdl(i)=gamlog
-cels6/25/08     &       adh*zi2 / (azero*azero*azero*bdh*bdh*bdh*str2)
-cels6/25/08     &       + capgam/(0.0180153d0*mstar)
-cels6/25/08     &       - 0.5d0*(omega*bi*str2 +
-cels6/25/08      &             (bil-0.19d0*(zabsi(i)-1.d0))*mchr*0.5d0)
-cels11/29/11            summt=summt + cpion(i) * (
-cels11/29/11     &       adh*zi2 / (azero3(i)*bdh3str2)
-          summt=summt + cpion(i) * (
-     &       adh*zsqi(i) / (azero3(i)*bdh3str2)
-     &       * (lambd2- 1.d0/lambd2 - 2.d0*dlog(lambd2))
-     &       + cpgmdms - 0.5d0*(omegahkf(i)*bistr2 +
-     &             (bil-zabterm(i))*mchr*0.5d0)
-     &       )
-        else
-          if(a0(i).gt.100.d0) then
-            sltout=a0(i)-100.d0     !read in as sltout + 100 (flag)
-            gamlog=sltout*str
-            if(i.ne.nw) then
-              gamp(i)=10.d0**gamlog        !activity coef.
-cels5/1/14 keep versions that don't have to be logged
-              gampdl(i)=gamlog
-            endif
-          endif
-        endif
-      enddo
-c... Secondary species
-       do i=npri+1,npri+naqx
-         inpri = i-npri
-cels5/22/12 already set to 1 above         gams(inpri)=1.d0
-cels6/26/08         rex=1.81d0
-cels6/26/08        if(z(i).lt.0.d0) rex=1.91d0
-cels11/29/11        zi2 = zsqi(i)
-cels6/26/08        azero = 2.d0*(a0(i) + zabsi(i)*rex)/(zabsi(i)+1.d0)
-cels2/8/2012 move down        lambda=1.d0+bdhstrt*azero(i)
-cels2/8/2012 move down        lambd2=1.d0+bdhstr2*azero(i)
-c
-        if(z(i).ne.0.d0) then
-          lambda=1.d0+bdhstrt*azero(i)
-          lambd2=1.d0+bdhstr2*azero(i)
-cels6/26/08          omega = 1.66027d+5*zi2/a0(i)
-cels6/25/08          gamlog=-adh*zi2*stroot/lambda  +  capgam  +
-cels6/25/08     &    (omega*bi*str + (bil - 0.19d0*(zabsi(i)-1.d0))*str)
-cels11/29/11          gamlog=-adhstrt*zi2/lambda  +  capgam  +
-          gamlog=-adhstrt*zsqi(i)/lambda  +  capgam  +
-     &      (omegahkf(i)*bistr + (bil - zabterm(i))*str)
-cels6/26/08     &    (omega*bistr + (bil - 0.19d0*(zabsi(i)-1.d0))*str)
-c
-c        secondary charged species
-            gams(inpri)=10.d0**gamlog    !activity coef.
-cels5/1/14 keep versions that don't have to be logged
-            gamsdl(inpri)=gamlog
-c    ---neutral species
-        else
-          if(a0(i).gt.100.d0) then
-            sltout=a0(i)-100.d0     !read in as sltout + 100 (flag)
-            gamlog=sltout*str
-            if(i.ne.nw) then
-              gams(inpri)=10.d0**gamlog    !activity coef.
-cels5/1/14 keep versions that don't have to be logged
-              gamsdl(inpri)=gamlog
-            endif
-          endif
-        endif
-      enddo
-c
-c     activity of water (Note: value of mstar here will
-c     strongly affect the value of the osmotic coefficient but
-c     does not affect the activity of water because mstar
-c     cancels out in the final expression)
-      osmo = -2.303d0*summt/mstar
-c     **note: for water, gamp is activity, NOT the coefficient!
-!els12/21/15 changed for consistency of 18.015 g/mol in database      gamp(nw)=dexp(-osmo*mstar/55.50837d0)
-!els01/13/16      gamp(nw)=dexp(-osmo*mstar/55.5093d0)
-      gamp(nw)=dexp(-osmo*mstar/rmh2o)
-cels5/1/14 keep versions that don't have to be logged
-      gampdl(nw) = dlog10(gamp(nw))
-c
-C---------------------------
-cels6/26/08 Revised salting out, so calculations are in readtherm_hkf
-      if(nis.gt.0)then
-          gamln=(CC+FF*tk2+GG/tk2)*str - (EE+HH*tk2)*(str/(str+1.0d0))
-          gsalt=dexp(gamln)
-        do niis = 1, nis
-          iis = indx_so(niis)
-cels5/1/14 keep versions that don't have to be logged
-          if(iis.le.npri)gamp(iis)=gsalt
-          if(iis.le.npri)gampdl(iis)=dlog10(gsalt)
-          if(iis.gt.npri)gams(iis-npri)=gsalt
-          if(iis.gt.npri)gamsdl(iis-npri)=dlog10(gsalt)
-        enddo
-      endif
-c
-c 
-      endif   !mopr21.eq.0   gt.0 for Pitzer model ns12/2017    
-
-cns12/2017 moved these statements here
-c     activity coeficient of the electron
-      if(ne.gt.0) gamp(ne)=1.d0
-cels5/1/14 keep versions that don't have to be logged
-      if(ne.gt.0) gampdl(ne)=0.d0
-c     activity coefficient of the primary adsorbed species
-      if(nd.gt.0) gamp(nd)=1.d0
-cels5/1/14 keep versions that don't have to be logged
-      if(nd.gt.0) gampdl(nd)=0.d0
-
-
-      return
-      end
-c
 											</code>
 										</pre>
         								</div>
