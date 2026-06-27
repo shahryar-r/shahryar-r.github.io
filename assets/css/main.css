@@ -3844,6 +3844,7 @@ textarea {
     						width: 100%;
     						height: auto;
 						display: block;
+						border: 1px solid;
 					}
 
 
@@ -3860,7 +3861,6 @@ textarea {
 						-webkit-overflow-scrolling: touch;
 						background: #f8f8f8;
 						color: #333333;
-						border-color: #dddddd;
 						border: 1px solid;
 					}
 
