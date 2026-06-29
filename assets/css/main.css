@@ -2284,8 +2284,8 @@ textarea {
 			-webkit-flex-wrap: wrap;
 			-ms-flex-wrap: wrap;
 			flex-wrap: wrap;
-			width: calc(100% + 3rem);
-			margin: -1.5rem 0 2rem -1.5rem;
+			width: calc(100%);
+			margin: 1rem 0 1rem 0;
 		}
 
 			form > .fields > .field {
@@ -2297,7 +2297,7 @@ textarea {
 				-webkit-flex-shrink: 0;
 				-ms-flex-shrink: 0;
 				flex-shrink: 0;
-				padding: 1.5rem 0 0 1.5rem;
+				padding: 0 0 1.5rem 0;
 				width: 100%;
 			}
 
@@ -2319,9 +2319,8 @@ textarea {
 		font-weight: 900;
 		line-height: 1.5;
 		letter-spacing: 0.075em;
-		/*font-size: 5rem;*/
 		text-transform: uppercase;
-		margin: 0 0 0.75rem 0;
+		margin: 0 0 0.5rem 0;
 	}
 
 /*
@@ -3220,13 +3219,15 @@ textarea {
 			width: 100%;
 			height: 100%;
 			background-color: transparent;
-        		background-image: url("../../images/bg_landscape_16_10.png"), url("../../images/particles.svg"), url("../../images/underlay.png");
-        		background-size: contain, cover, cover;
-        		background-position: top center, center, center;
+        		background-image: url("../../images/bg_landscape_16_10.png"), url("../../images/particles.svg"), url("../../images/underlay_landscape_16_10.png");
+        		background-size: 100% auto, 100% auto, 100% auto;
 			background-repeat: no-repeat, no-repeat, no-repeat;
+        		background-position: top center, top center, top center;
 			background-attachment: scroll, scroll, scroll;
 			z-index: -1;
 		}
+
+
 
 
 			#wrapper > .bg.fixed {
@@ -3234,6 +3235,7 @@ textarea {
 				width: 100vw;
 				height: 100vh;
 			}
+
 
 
 		#wrapper.fade-in:before {
@@ -3280,10 +3282,10 @@ textarea {
 				width: 100%;
 				height: 100%;
 				background-color: transparent;
-        			background-image: url("../../images/bg_portrait_1_2.png"), url("../../images/particles.svg"), url("../../images/underlay.png");
-        			background-size: contain, cover, cover;
-        			background-position: top center, center, center;
+        			background-image: url("../../images/bg_portrait_1_2.png"), url("../../images/particles.svg"), url("../../images/underlay_portrait_1_2.png");
+        			background-size: 100% auto, 100% auto, 100% auto;
 				background-repeat: no-repeat, no-repeat, no-repeat;
+        			background-position: top center, top center, top center;
 				background-attachment: scroll, scroll, scroll;
 				z-index: -1;
 
@@ -3468,7 +3470,7 @@ textarea {
 		@media screen and (orientation: landscape) {
 
 			#intro {
-				padding-bottom: 5rem;
+				padding-bottom: 3rem;
 
 			}
 		}
@@ -3476,7 +3478,7 @@ textarea {
 		@media screen and (orientation: portrait) {
 
 			#intro {
-				padding-bottom: 8rem;
+				padding-bottom: 6rem;
 
 			}
 		}
@@ -4320,16 +4322,6 @@ textarea {
 						#footer > section.split.contact > section.alt > :last-child {
 							margin-top: -0.325rem;
 						}
-
-
-
-		/* @media screen and (orientation: portrait) {
-
-			#footer {
-				width: calc(100% - 2rem);
-			}
-
-		}*/
 
 
 	#copyright {
