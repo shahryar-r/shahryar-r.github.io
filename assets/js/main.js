@@ -88,8 +88,9 @@
 			// Enable everywhere else.
 				else {
 
-					breakpoints.on('>large', on);
-					breakpoints.on('<=large', off);
+					// breakpoints.on('>large', on);
+					// breakpoints.on('<=large', off);
+					off();
 
 				}
 
@@ -116,7 +117,7 @@
 		$('.scrolly').scrolly();
 
 	// Background.
-		$wrapper._parallax(0.925);
+		$wrapper._parallax(1);
 
 	// Nav Panel.
 
