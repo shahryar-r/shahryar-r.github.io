@@ -3283,7 +3283,7 @@ textarea {
 				height: 100%;
 				background-color: transparent;
         			background-image: url("../../images/bg_portrait_1_2.png"), url("../../images/particles.svg"), url("../../images/underlay_portrait_1_2.png");
-        			background-size: 100% auto, 100% auto, 100% auto;
+        			background-size: 100% auto, cover, 100% auto;
 				background-repeat: no-repeat, no-repeat, no-repeat;
         			background-position: top center, top center, top center;
 				background-attachment: scroll, scroll, scroll;
