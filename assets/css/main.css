@@ -3870,7 +3870,7 @@ textarea {
 					#main > .posts > article .result pre.code_editor {
 						overflow-x: auto;
 						overflow-y: auto;
-						max-height: 50vh;
+						max-height: 20rem;
 						white-space: pre !important;
 						-webkit-overflow-scrolling: touch;
 						background: #f8f8f8;
