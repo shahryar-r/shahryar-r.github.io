@@ -4279,7 +4279,6 @@ textarea {
 			}
 
 				#footer > section.split > section {
-					border-bottom: solid 1px rgba(101, 101, 101, 0.25);
 					padding-left: 1rem;
 				}
 
@@ -4379,6 +4378,10 @@ textarea {
 						border: solid 1px rgba(101, 101, 101, 0.25);
 
 					}
+
+				#footer > section.split > section {
+					padding-right: 1rem;
+				}
 
 
 		}
