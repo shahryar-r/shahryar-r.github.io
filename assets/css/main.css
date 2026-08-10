@@ -3527,7 +3527,7 @@ body.no-background #wrapper {
 #intro input[type="button"],
 #intro button,
 #intro .button {
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.5);
   box-shadow: inset 0 0 0 2px black;
   color: black !important;
 }
