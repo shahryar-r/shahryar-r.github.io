@@ -3,6 +3,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:ital@0;1&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,700;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Signika:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 
 :root {
   color-scheme: light;
@@ -251,7 +254,7 @@ body,
 input,
 select,
 textarea {
-  font-family: sans-serif, Georgia, serif;
+  font-family: "Source Sans 3", Georgia, serif;
   font-weight: 400;
   font-style: normal;
   font-size: 1rem;
@@ -2530,7 +2533,7 @@ input[type="radio"] + label {
   display: inline-block;
   font-size: 1rem;
   letter-spacing: 0;
-  font-family: sans-serif, Georgia, serif;
+  font-family: "Source Sans 3", Georgia, serif;
   text-transform: none;
   font-weight: 300;
   padding-left: 2.8rem;
@@ -3997,8 +4000,8 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   justify-content: center;
   column-gap: 1rem;
   color: rgba(101, 101, 101, 0.5);
-  font-size: 0.7rem;
-  font-family: Tahoma, Arial;
+  font-size: 0.8rem;
+  font-family: "Signika", Tahoma, Arial;
   font-style: italic;
 }
 
@@ -4123,7 +4126,7 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   border-radius: 0 0 1rem 1rem;
   box-shadow: none;
   display: flex;
-  font-family: "Times New Roman", Arial;
+  font-family: "Tinos", "Times New Roman", Arial;
   font-size: 1rem;
   background-color: rgba(255, 255, 255, 0.7);
   color: black;
