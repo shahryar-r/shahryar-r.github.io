@@ -3978,7 +3978,7 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
     "introduction introduction"
-    "result description";
+    "description result";
 }
 
 #main > .posts > article > * {
