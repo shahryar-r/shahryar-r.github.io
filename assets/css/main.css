@@ -4164,10 +4164,10 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
 #main > .posts_about > article {
   display: grid;
   gap: 0rem 1rem;
-  grid-template-columns: minmax(0, 65fr) minmax(0, 35fr);
+  grid-template-columns: minmax(0, 35fr) minmax(0, 65fr);
   grid-template-areas:
     "title title"
-    "result description";
+    "description result";
 }
 
 #main > .posts_about > article > * {
