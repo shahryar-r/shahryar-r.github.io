@@ -3,9 +3,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:ital@0;1&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,700;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Signika:wght@300..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Signika:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
 :root {
   color-scheme: light;
@@ -344,13 +343,13 @@ large {
 
 h1 {
   font-size: 4rem;
-  line-height: 1.1;
+  line-height: 1.1rem;
   margin: 0 0 2rem 0;
 }
 
 h2 {
   font-size: 1.5rem;
-  line-height: 1.3;
+  line-height: 1.3rem;
   margin: 0 0 1.5rem 0;
 }
 
@@ -405,7 +404,7 @@ code {
 
 		pre code {
 			display: block;
-			line-height: 1.75;
+			line-height: 1.75rem;
     			background: #1e1e1e;
     			color: #d4d4d4;
     			padding: 1rem;
@@ -2440,7 +2439,7 @@ form > .fields > .field.quarter {
 		display: block;
 		font-family: "Source Sans 3", Helvetica, sans-serif;
 		font-weight: 900;
-		line-height: 1.5;
+		line-height: 1.5rem;
 		letter-spacing: 0.075em;
 		text-transform: uppercase;
 		margin: 0rem;
@@ -2549,7 +2548,7 @@ input[type="radio"] + label:before {
   font-style: normal;
   font-variant: normal;
   text-rendering: auto;
-  line-height: 1;
+  line-height: 1rem;
   text-transform: none !important;
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
@@ -2690,7 +2689,7 @@ input[type="radio"]:focus + label:before {
   font-style: normal;
   font-variant: normal;
   text-rendering: auto;
-  line-height: 1;
+  line-height: 1rem;
   text-transform: none !important;
   font-family: "Font Awesome 5 Free";
   font-weight: 400;
@@ -3140,7 +3139,7 @@ table th {
   font-size: 0.8rem;
   font-weight: 900;
   letter-spacing: 0.075em;
-  line-height: 1.5;
+  line-height: 1.5rem;
   padding: 0 0.75rem 0.75rem 0.75rem;
   text-align: left;
   text-transform: uppercase;
@@ -3279,7 +3278,7 @@ table.alt tbody tr td {
   font-style: normal;
   font-variant: normal;
   text-rendering: auto;
-  line-height: 1;
+  line-height: 1rem;
   text-transform: none !important;
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
@@ -3567,7 +3566,7 @@ body.no-background #wrapper {
 
 #intro h1 {
   font-size: 5rem;
-  line-height: 1;
+  line-height: 1rem;
 }
 
 #intro p {
@@ -3764,7 +3763,7 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   font-size: 2.25rem;
   font-weight: 900;
   letter-spacing: 0.075em;
-  line-height: 1;
+  line-height: 1rem;
   padding: 1rem 1.75rem;
   text-transform: uppercase;
   visibility: visible;
@@ -3967,31 +3966,27 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
 }
 
 #main > .posts > article {
-  padding: 1rem 2.5rem 2.5rem 2.5rem;
+  padding: 1rem 2.5rem 0rem 2.5rem;
   width: calc(100% - 4rem);
   max-width: 70rem;
   border-radius: 1rem;
   box-shadow: 0 0 0.75rem 0.25rem rgba(0, 0, 0, 0.5);
   background-color: white;
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas:
-    "introduction introduction"
-    "description result";
-}
-
-#main > .posts > article > * {
-  min-width: 0;
 }
 
 #main > .posts > article .introduction {
-  grid-area: introduction;
-  align-items: center;
+  align-items: flex-start;
   display: flex;
   flex-direction: column;
   text-align: center;
   gap: 0.5rem;
+  min-width: 0;
+  max-width: 100%;
+  margin-bottom: 2.5rem;
+}
+
+#main > .posts > article.open .introduction {
+  margin-bottom: 2.5rem;
 }
 
 #main > .posts > article .introduction .date {
@@ -4003,6 +3998,9 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   font-size: 0.8rem;
   font-family: "Signika", Tahoma, Arial;
   font-style: italic;
+  width: 100%;
+  flex-shrink: 0;
+  box-sizing: border-box;
 }
 
 #main > .posts > article .introduction .date::before,
@@ -4013,15 +4011,76 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   align-self: center;
 }
 
-#main > .posts > article .introduction .title {
+#main > .posts > article .introduction button.title {
   font-family: "Source Sans 3", Helvetica, sans-serif;
   font-weight: 900;
   letter-spacing: 0.075em;
   text-transform: uppercase;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   line-height: 1.3;
   margin: 0;
-  text-align: center;
+  text-align: left;
+  border: 0;
+  padding: 0;
+  background: none;
+  color: black !important;
+  box-shadow: none;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  white-space: normal;
+  box-sizing: border-box;
+  height: auto;
+  min-height: 0;
+}
+
+#main > .posts > article .introduction .title .title-text {
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+
+#main > .posts > article .introduction button.title:hover .title-text {
+  background: none;
+  color: black !important;
+  box-shadow: none;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+#main > .posts > article .introduction .title .toggle-plus,
+#main > .posts > article .introduction .title .toggle-minus {
+  margin-right: 0rem;
+}
+
+#main > .posts > article .introduction .title .toggle-minus {
+  display: none;
+}
+
+#main > .posts > article.open .introduction .title .toggle-plus {
+  display: none;
+}
+
+#main > .posts > article.open .introduction .title .toggle-minus {
+  display: inline-block;
+}
+
+#main > .posts > article .post-content > * {
+  min-width: 0;
+}
+
+#main > .posts > article .post-content {
+  display: none;
+}
+
+#main > .posts > article.open .post-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-areas: "description result";
+  gap: 1rem;
 }
 
 #main > .posts > article .result {
@@ -4056,6 +4115,9 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
 }
 
 #main > .posts > article .result pre.code_editor {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
   overflow-x: auto;
   overflow-y: auto;
   max-height: 20rem;
@@ -4104,13 +4166,21 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
 }
 
 @media (max-width: 980px) {
-  #main > .posts > article {
-    grid-template-columns: 1fr;
+  #main > .posts > article.open .post-content {
+    grid-template-columns: minmax(0, 1fr);
     grid-template-areas:
-      "introduction"
       "result"
       "description";
   }
+
+  #main > .posts > article .introduction {
+    margin-bottom: 1.5rem;
+  }
+
+  #main > .posts > article.open .introduction {
+    margin-bottom: 1.5rem;
+  }
+
 }
 
 #main > .posts > article.featured {
@@ -4134,14 +4204,13 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
 
 #main > .posts > article.featured i.icon {
   font-size: 2rem;
-  line-height: 1;
+  line-height: 1rem;
   vertical-align: middle;
 }
 
 #main > .posts > article.featured p {
   text-align: left;
 }
-
 
 #main > .posts_about {
   margin: 0 auto;
@@ -4191,7 +4260,7 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   letter-spacing: 0.075em;
   text-transform: uppercase;
   font-size: 1.5rem;
-  line-height: 1.3;
+  line-height: 1.3rem;
   margin: 0 0 2.5rem 0;
   text-align: center;
 }
@@ -4241,7 +4310,6 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   gap: 0.5rem;
 }
 
-
 @media (max-width: 980px) {
   #main > .posts_about > article {
     gap: 1rem 0rem;
@@ -4251,9 +4319,7 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
       "result"
       "description";
   }
-
 }
-
 
 /* Footer */
 
@@ -4675,7 +4741,7 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   font-size: 0.7rem;
   font-weight: 900;
   letter-spacing: 0.075em;
-  line-height: 1.5;
+  line-height: 1.5rem;
   text-align: center;
   text-transform: uppercase;
   margin: 4rem auto 4rem auto;
@@ -4739,7 +4805,7 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
 #copyright ul li {
   border-left: solid 2px;
   display: inline-block;
-  line-height: 1;
+  line-height: 1rem;
   margin-left: 1rem;
   padding-left: 1rem;
 }
@@ -4816,7 +4882,7 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   font-style: normal;
   font-variant: normal;
   text-rendering: auto;
-  line-height: 1;
+  line-height: 1rem;
   text-transform: none !important;
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
@@ -5015,7 +5081,7 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   font-style: normal;
   font-variant: normal;
   text-rendering: auto;
-  line-height: 1;
+  line-height: 1rem;
   text-transform: none !important;
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
