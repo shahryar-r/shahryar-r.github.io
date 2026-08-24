@@ -257,7 +257,7 @@ textarea {
   font-weight: 400;
   font-style: normal;
   font-size: 1rem;
-  line-height: 2rem;
+  line-height: 2;
 }
 
 a {
@@ -343,13 +343,13 @@ large {
 
 h1 {
   font-size: 4rem;
-  line-height: 1.1rem;
+  line-height: 1.1;
   margin: 0 0 2rem 0;
 }
 
 h2 {
   font-size: 1.5rem;
-  line-height: 1.3rem;
+  line-height: 1.3;
   margin: 0 0 1.5rem 0;
 }
 
@@ -404,7 +404,7 @@ code {
 
 		pre code {
 			display: block;
-			line-height: 1.75rem;
+			line-height: 1.75;
     			background: #1e1e1e;
     			color: #d4d4d4;
     			padding: 1rem;
@@ -2239,7 +2239,7 @@ button,
   font-weight: 900;
   letter-spacing: 0.075em;
   height: 3rem;
-  line-height: 3rem;
+  line-height: 3;
   padding: 0 2rem;
   text-align: center;
   text-decoration: none;
@@ -2263,7 +2263,7 @@ button.icon.solo,
   position: relative;
   width: 5rem;
   height: 5rem;
-  line-height: 5rem;
+  line-height: 5;
   border-radius: 100%;
   text-indent: 0;
   overflow: hidden;
@@ -2304,7 +2304,7 @@ button.small,
 .button.small {
   font-size: 0.7rem;
   height: 2.5rem;
-  line-height: 2.5rem;
+  line-height: 2.5;
   padding: 0 1.5rem;
 }
 
@@ -2315,7 +2315,7 @@ button.large,
 .button.large {
   font-size: 0.9rem;
   height: 3.5rem;
-  line-height: 3.5rem;
+  line-height: 3.5;
   padding: 0 2.75rem;
 }
 
@@ -2439,7 +2439,7 @@ form > .fields > .field.quarter {
 		display: block;
 		font-family: "Source Sans 3", Helvetica, sans-serif;
 		font-weight: 900;
-		line-height: 1.5rem;
+		line-height: 1.5;
 		letter-spacing: 0.075em;
 		text-transform: uppercase;
 		margin: 0rem;
@@ -2548,7 +2548,7 @@ input[type="radio"] + label:before {
   font-style: normal;
   font-variant: normal;
   text-rendering: auto;
-  line-height: 1rem;
+  line-height: 1;
   text-transform: none !important;
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
@@ -2563,7 +2563,7 @@ input[type="radio"] + label:before {
   font-size: 0.8rem;
   height: 1.8rem;
   left: 0;
-  line-height: 1.65rem;
+  line-height: 1.65;
   position: absolute;
   text-align: center;
   top: -0.125rem;
@@ -2689,7 +2689,7 @@ input[type="radio"]:focus + label:before {
   font-style: normal;
   font-variant: normal;
   text-rendering: auto;
-  line-height: 1rem;
+  line-height: 1;
   text-transform: none !important;
   font-family: "Font Awesome 5 Free";
   font-weight: 400;
@@ -2905,7 +2905,7 @@ ul.icons li:last-child {
 ul.icons li .icon:before {
   width: 2.5rem;
   height: 2.5rem;
-  line-height: 2.5rem;
+  line-height: 2.5;
   display: inline-block;
   text-align: center;
   border-radius: 100%;
@@ -3139,7 +3139,7 @@ table th {
   font-size: 0.8rem;
   font-weight: 900;
   letter-spacing: 0.075em;
-  line-height: 1.5rem;
+  line-height: 1.5;
   padding: 0 0.75rem 0.75rem 0.75rem;
   text-align: left;
   text-transform: uppercase;
@@ -3255,7 +3255,7 @@ table.alt tbody tr td {
   font-weight: 900;
   height: 3rem;
   letter-spacing: 0.075em;
-  line-height: calc(3rem - 4px);
+  line-height: 3;
   margin-left: -2px;
   min-width: 3rem;
   position: relative;
@@ -3278,7 +3278,7 @@ table.alt tbody tr td {
   font-style: normal;
   font-variant: normal;
   text-rendering: auto;
-  line-height: 1rem;
+  line-height: 1;
   text-transform: none !important;
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
@@ -3566,7 +3566,7 @@ body.no-background #wrapper {
 
 #intro h1 {
   font-size: 5rem;
-  line-height: 1rem;
+  line-height: 1;
 }
 
 #intro p {
@@ -3763,7 +3763,7 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   font-size: 2.25rem;
   font-weight: 900;
   letter-spacing: 0.075em;
-  line-height: 1rem;
+  line-height: 1;
   padding: 1rem 1.75rem;
   text-transform: uppercase;
   visibility: visible;
@@ -3809,7 +3809,7 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
 		transition: transform 1s ease, opacity 1s ease;
 		background: rgba(255, 255, 255, 0.175);
 		height: 4rem;
-		line-height: 4rem;
+		line-height: 4;
 		margin: -4rem auto 0 auto;
 		overflow: hidden;
 		padding: 0 2rem 0 0;
@@ -4054,6 +4054,7 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
 #main > .posts > article .introduction .title .toggle-plus,
 #main > .posts > article .introduction .title .toggle-minus {
   margin-right: 0rem;
+  margin-top: 0.2rem;
 }
 
 #main > .posts > article .introduction .title .toggle-minus {
@@ -4138,7 +4139,7 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
 
 #main > .posts > article .description .note {
   font-size: 0.8rem;
-  line-height: 1.3rem;
+  line-height: 1.3;
 }
 
 #main > .posts > article .description .reference-article {
@@ -4204,7 +4205,7 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
 
 #main > .posts > article.featured i.icon {
   font-size: 2rem;
-  line-height: 1rem;
+  line-height: 1;
   vertical-align: middle;
 }
 
@@ -4260,7 +4261,7 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   letter-spacing: 0.075em;
   text-transform: uppercase;
   font-size: 1.5rem;
-  line-height: 1.3rem;
+  line-height: 1.3;
   margin: 0 0 2.5rem 0;
   text-align: center;
 }
@@ -4741,7 +4742,7 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   font-size: 0.7rem;
   font-weight: 900;
   letter-spacing: 0.075em;
-  line-height: 1.5rem;
+  line-height: 1.5;
   text-align: center;
   text-transform: uppercase;
   margin: 4rem auto 4rem auto;
@@ -4805,7 +4806,7 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
 #copyright ul li {
   border-left: solid 2px;
   display: inline-block;
-  line-height: 1rem;
+  line-height: 1;
   margin-left: 1rem;
   padding-left: 1rem;
 }
@@ -4882,7 +4883,7 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   font-style: normal;
   font-variant: normal;
   text-rendering: auto;
-  line-height: 1rem;
+  line-height: 1;
   text-transform: none !important;
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
@@ -5065,7 +5066,7 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   cursor: pointer;
   display: block;
   height: 3.25rem;
-  line-height: 3.25rem;
+  line-height: 3.25;
   padding-left: 1.25rem;
   position: absolute;
   left: 0;
@@ -5081,7 +5082,7 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   font-style: normal;
   font-variant: normal;
   text-rendering: auto;
-  line-height: 1rem;
+  line-height: 1;
   text-transform: none !important;
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
