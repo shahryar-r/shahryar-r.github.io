@@ -235,4 +235,54 @@
       });
     });
   }
+
+  // document.addEventListener("DOMContentLoaded", function () {
+  //   document
+  //     .querySelectorAll("#main .posts article button.title")
+  //     .forEach(function (title) {
+  //       title.addEventListener("click", function () {
+  //         var article = title.closest("article");
+
+  //         if (article) {
+  //           article.classList.toggle("open");
+  //         }
+  //       });
+  //     });
+  // });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    document
+      .querySelectorAll("#main .posts article button.title")
+      .forEach(function (title) {
+        title.addEventListener("click", function () {
+          var article = title.closest("article");
+
+          if (!article) return;
+
+          var isOpen = article.classList.contains("open");
+
+          // Close the currently open post
+          document
+            .querySelectorAll("#main .posts article.open")
+            .forEach(function (openArticle) {
+              openArticle.classList.remove("open");
+            });
+
+          // Open the clicked post
+          if (!isOpen) {
+            article.classList.add("open");
+            requestAnimationFrame(function () {
+              var top = article.getBoundingClientRect().top + window.scrollY;
+              var gap = parseFloat(
+                getComputedStyle(document.documentElement).fontSize,
+              );
+
+              window.scrollTo({
+                top: top - gap,
+              });
+            });
+          }
+        });
+      });
+  });
 })(jQuery);
