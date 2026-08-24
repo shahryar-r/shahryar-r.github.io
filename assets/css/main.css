@@ -4135,6 +4135,7 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  padding-bottom: 1.5rem;
 }
 
 #main > .posts > article .description .note {
