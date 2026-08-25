@@ -2905,7 +2905,7 @@ ul.icons li:last-child {
 ul.icons li .icon:before {
   width: 2.5rem;
   height: 2.5rem;
-  line-height: 2.5;
+  line-height: 2.5rem;
   display: inline-block;
   text-align: center;
   border-radius: 100%;
@@ -5067,7 +5067,7 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
   cursor: pointer;
   display: block;
   height: 3.25rem;
-  line-height: 3.25;
+  line-height: 3.25rem;
   padding-left: 1.25rem;
   position: absolute;
   left: 0;
