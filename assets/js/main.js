@@ -236,57 +236,258 @@
     });
   }
 
-  document.addEventListener("DOMContentLoaded", function () {
-    document
-      .querySelectorAll("#main .posts article button.title")
-      .forEach(function (title) {
-        title.addEventListener("click", function () {
-          var article = title.closest("article");
-
-          if (article) {
-            article.classList.toggle("open");
-          }
-        });
-      });
-  });
-
   // document.addEventListener("DOMContentLoaded", function () {
   //   document
-  //     .querySelectorAll("#main .posts article button.title")
+  //     .querySelectorAll("#main > .posts-layout > .posts-wrapper > .posts > article .introduction button.title")
   //     .forEach(function (title) {
   //       title.addEventListener("click", function () {
   //         var article = title.closest("article");
 
-  //         if (!article) return;
-
-  //         var isOpen = article.classList.contains("open");
-
-  //         // Close the currently open post
-  //         document
-  //           .querySelectorAll("#main .posts article.open")
-  //           .forEach(function (openArticle) {
-  //             openArticle.classList.remove("open");
-  //           });
-
-  //         // Open the clicked post
-  //         if (!isOpen) {
-  //           article.classList.add("open");
-  //           requestAnimationFrame(function () {
-  //             var top = article.getBoundingClientRect().top + window.scrollY;
-  //             var gap = parseFloat(
-  //               getComputedStyle(document.documentElement).fontSize,
-  //             );
-
-  //             window.scrollTo({
-  //               top: top - gap,
-  //             });
-  //           });
+  //         if (article) {
+  //           article.classList.toggle("open");
   //         }
   //       });
   //     });
   // });
 
+  // (function () {
+  //   const layout = document.querySelector(".posts-layout");
+  //   const list = layout && layout.querySelector(".posts");
+  //   const detail = layout && layout.querySelector(".post-detail");
+  //   if (!layout || !list || !detail) return;
 
+  //   const articles = Array.from(list.querySelectorAll("article"));
 
+  //   // Remember where each article's post-content originally lives, so we
+  //   // can always find it again regardless of where it's currently sitting.
+  //   articles.forEach((article) => {
+  //     article._postContent = article.querySelector(".post-content");
+  //   });
 
+  //   const desktopQuery = window.matchMedia("(min-width: 981px)");
+  //   const isDesktop = () => desktopQuery.matches;
+
+  //   function homeAllContent() {
+  //     articles.forEach((article) => {
+  //       const content = article._postContent;
+  //       if (content && content.parentElement !== article) {
+  //         article.appendChild(content);
+  //       }
+  //     });
+  //   }
+
+  //   function render() {
+  //     const open = articles.find((a) => a.classList.contains("open"));
+
+  //     if (isDesktop()) {
+  //       articles.forEach((article) => {
+  //         const content = article._postContent;
+  //         if (!content) return;
+  //         if (article === open) {
+  //           if (content.parentElement !== detail) {
+  //             detail.innerHTML = "";
+
+  //             const introduction = article.querySelector(".introduction");
+
+  //             if (introduction) {
+  //               const rightIntroduction = document.createElement("div");
+  //               rightIntroduction.className = "introduction";
+
+  //               const titleText = introduction.querySelector(".title-text");
+
+  //               if (titleText) {
+  //                 const title = document.createElement("div");
+  //                 title.className = "title-text";
+  //                 title.textContent = titleText.textContent.trim();
+
+  //                 rightIntroduction.appendChild(title);
+  //               }
+
+  //               detail.appendChild(rightIntroduction);
+  //             }
+
+  //             detail.appendChild(content);
+  //           }
+  //         } else if (content.parentElement === detail) {
+  //           article.appendChild(content);
+  //         }
+  //       });
+  //     } else {
+  //       homeAllContent();
+  //     }
+  //   }
+
+  //   function selectArticle(article) {
+  //     articles.forEach((a) => a.classList.remove("open"));
+  //     article.classList.add("open");
+  //     render();
+  //     if (isDesktop()) {
+  //       detail.scrollTop = 0;
+  //     }
+  //   }
+
+  //   articles.forEach((article) => {
+  //     const trigger = article.querySelector(".introduction");
+  //     if (trigger) {
+  //       trigger.addEventListener("click", () => selectArticle(article));
+  //     }
+  //   });
+
+  //   // Re-run when crossing the desktop/mobile breakpoint so content ends
+  //   // up in the right place either way.
+  //   desktopQuery.addEventListener("change", render);
+
+  //   // Default: open the first post.
+  //   if (articles[0]) {
+  //     articles[0].classList.add("open");
+  //   }
+  //   render();
+  // })();
+
+  (function () {
+    const layout = document.querySelector(".posts-layout");
+    const list = layout && layout.querySelector(".posts");
+    const detail = layout && layout.querySelector(".post-detail");
+
+    if (!layout || !list || !detail) return;
+
+    const articles = Array.from(list.querySelectorAll("article"));
+
+    articles.forEach((article) => {
+      article._postContent = article.querySelector(".post-content");
+    });
+
+    const desktopQuery = window.matchMedia("(min-width: 981px)");
+
+    function isDesktop() {
+      return desktopQuery.matches;
+    }
+
+    function homeAllContent() {
+      articles.forEach((article) => {
+        const content = article._postContent;
+
+        if (content && content.parentElement !== article) {
+          article.appendChild(content);
+        }
+      });
+    }
+
+    function renderDesktop() {
+      const open = articles.find((article) =>
+        article.classList.contains("open"),
+      );
+
+      if (!open) {
+        detail.innerHTML = "";
+        return;
+      }
+
+      articles.forEach((article) => {
+        const content = article._postContent;
+
+        if (!content) return;
+
+        if (article === open) {
+          if (content.parentElement !== detail) {
+            detail.innerHTML = "";
+
+            const introduction = article.querySelector(".introduction");
+
+            if (introduction) {
+              const rightIntroduction = document.createElement("div");
+              rightIntroduction.className = "introduction";
+
+              const titleText = introduction.querySelector(".title-text");
+
+              if (titleText) {
+                const title = document.createElement("div");
+                title.className = "title-text";
+                title.textContent = titleText.textContent.trim();
+
+                rightIntroduction.appendChild(title);
+              }
+
+              detail.appendChild(rightIntroduction);
+            }
+
+            detail.appendChild(content);
+          }
+        } else if (content.parentElement === detail) {
+          article.appendChild(content);
+        }
+      });
+    }
+
+    function render() {
+      if (isDesktop()) {
+        renderDesktop();
+      } else {
+        homeAllContent();
+      }
+    }
+
+    function mobileClick(article) {
+      article.classList.toggle("open");
+    }
+
+    function desktopClick(article) {
+      articles.forEach((a) => {
+        a.classList.remove("open");
+      });
+
+      article.classList.add("open");
+
+      renderDesktop();
+
+      detail.scrollTop = 0;
+    }
+
+    articles.forEach((article) => {
+      const trigger = article.querySelector(".introduction");
+
+      if (!trigger) return;
+
+      trigger.addEventListener("click", () => {
+        if (isDesktop()) {
+          desktopClick(article);
+        } else {
+          mobileClick(article);
+        }
+      });
+    });
+
+    desktopQuery.addEventListener("change", () => {
+      if (isDesktop()) {
+        articles.forEach((article) => {
+          article.classList.remove("open");
+        });
+
+        if (articles[0]) {
+          articles[0].classList.add("open");
+        }
+
+        renderDesktop();
+      } else {
+        homeAllContent();
+
+        articles.forEach((article) => {
+          article.classList.remove("open");
+        });
+
+        detail.innerHTML = "";
+      }
+    });
+
+    // Initial state
+    if (isDesktop()) {
+      if (articles[0]) {
+        articles[0].classList.add("open");
+      }
+
+      renderDesktop();
+    } else {
+      homeAllContent();
+    }
+  })();
 })(jQuery);
