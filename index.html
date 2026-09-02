@@ -93,10 +93,9 @@
 
       <!-- Main -->
       <main id="main">
-        <section class="posts">
-          <!-- Featured Post -->
-
-          <article class="featured">
+        <!-- Featured Post -->
+        <section class="posts_featured">
+          <article>
             <p>
               <i
                 class="icon solid fa-quote-left"
@@ -106,415 +105,441 @@
               <large><strong>computational modelling</strong></large
               >, <large><strong>data science</strong></large
               >, and <large><strong>scientific programming</strong></large
-              >. <br />The site also demonstrates my web development skills
-              using HTML, CSS, and JavaScript.
+              >. The site also demonstrates my web development skills using
+              HTML, CSS, and JavaScript.
               <i
                 class="icon solid fa-quote-right"
                 style="margin-left: 0.5rem"
               ></i>
             </p>
           </article>
+        </section>
 
-          <!----------------------------------------------------------------------------------------------------------- Posts --------------------------------------------------------------------------->
-          <!-----------------------------  Post #8 ----------------------------->
+        <!----------------------------------------------------------------------------------------------------------- Posts --------------------------------------------------------------------------->
+        <div class="posts-layout">
+          <div class="post-detail"></div>
 
-          <article>
-            <div class="introduction">
-              <div class="date">8 June 2026</div>
+          <div class="posts-wrapper">
+            <div class="left-column-head">Portfolio</div>
 
-              <!-- <div class="title">
-                Evaluated the effect of ion activity models on CO2 Storage Simulations
-              </div> -->
+            <section class="posts">
+              <!-----------------------------  Post #8 ----------------------------->
+              <article>
+                <div class="introduction">
+                  <div class="date">8 June 2026</div>
 
-              <button class="title" type="button">
-                <i class="far fa-plus-square toggle-plus"></i>
-                <i class="far fa-minus-square toggle-minus"></i>
-                <span class="title-text">
-                  Evaluated the effect of ion activity models on CO2 Storage
-                  Simulations
-                </span>
-              </button>
-            </div>
+                  <!-- <div class="title">
+                  Evaluated the effect of ion activity models on CO2 Storage Simulations
+                </div> -->
 
-            <div class="post-content">
-              <div class="result">
-                <img src="images/81.gif" alt="" />
-                <img src="images/82.png" alt="" />
-              </div>
-
-              <div class="description">
-                <p>
-                  As part of my research on geological CO2 storage, I
-                  investigated how different ion activity models influence
-                  geochemical predictions in reactive-transport simulations.
-                  Although activity models play a fundamental role in
-                  calculating aqueous speciation and mineral reactions, their
-                  impact on large-scale storage assessments is not always well
-                  understood. To explore this, I used a modified version of
-                  <strong><em>TOUGHREACT</em></strong> that I had previously
-                  extended in <strong><em>Fortran</em></strong> to include the
-                  ideal activity model, with the Bunter Sandstone Formation
-                  serving as the case study. Before running the simulations, I
-                  converted the original
-                  <strong><em>Petrel</em></strong> geological model into a
-                  workflow that could be used by
-                  <strong><em>TOUGHREACT</em></strong
-                  >. This involved converting the
-                  <strong><em>Petrel</em></strong> grid into VTK format using
-                  <a
-                    href="https://github.com/BinWang0213/PyGRDECL"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style="color: blue"
-                    >PyGRDECL</a
-                  >
-                  and then generating a
-                  <strong><em>TOUGHREACT</em></strong> mesh using
-                  <a
-                    href=" https://github.com/keurfonluu/toughio"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style="color: blue"
-                    >toughio</a
-                  >. I developed six simulation scenarios by combining three
-                  initial geochemical equilibrium states (non-equilibrium,
-                  semi-equilibrium, and equilibrium) with three activity model
-                  formulations (ideal, extended Debye-Huckel, and Pitzer). The
-                  objective was to investigate the effects of activity model
-                  selection under different geochemical equilibrium assumptions.
-                  The results indicated that failing to establish geochemical
-                  equilibrium before CO2 injection can lead to a significant
-                  underestimation of mineral reactions. In contrast, simulations
-                  using the ideal activity model tended to overestimate reaction
-                  intensity even when equilibrium conditions were established.
-                  Despite this, the ideal model provided sufficient predictive
-                  accuracy for large-scale CO2 storage assessments while
-                  requiring considerably less computational effort than more
-                  complex formulations. To communicate the geological model more
-                  effectively, I also created a rotating 3D visualization of the
-                  <strong><em>Petrel</em></strong> grid in
-                  <strong><em>Python</em></strong
-                  >. The animation was later used in a presentation at the 87th
-                  EAGE conference and helped illustrate the scale and geometry
-                  of the storage formation in a way that static figures could
-                  not.
-                </p>
-                <div class="note">
-                  <em
-                    ><strong>Note:</strong> The version shown on this website
-                    has been compressed and reduced in resolution to make it
-                    suitable for web publishing.</em
-                  >
+                  <button class="title" type="button">
+                    <i class="far fa-plus-square toggle-plus"></i>
+                    <i class="far fa-minus-square toggle-minus"></i>
+                    <span class="title-text">
+                      Evaluated the effect of ion activity models on CO2 Storage
+                      Simulations
+                    </span>
+                  </button>
                 </div>
-                <div class="reference-article">
-                  <a
-                    href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=whnMnfAAAAAJ&sortby=pubdate&citation_for_view=whnMnfAAAAAJ:2osOgNQ5qMEC"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="icon solid fa-link"
-                    ><span>Paper</span></a
-                  >
+
+                <div class="post-content">
+                  <div class="result">
+                    <img src="images/81.gif" alt="" />
+                    <img src="images/82.png" alt="" />
+                  </div>
+
+                  <div class="description">
+                    <p>
+                      As part of my research on geological CO2 storage, I
+                      investigated how different ion activity models influence
+                      geochemical predictions in reactive-transport simulations.
+                      Although activity models play a fundamental role in
+                      calculating aqueous speciation and mineral reactions,
+                      their impact on large-scale storage assessments is not
+                      always well understood. To explore this, I used a modified
+                      version of
+                      <strong><em>TOUGHREACT</em></strong> that I had previously
+                      extended in <strong><em>Fortran</em></strong> to include
+                      the ideal activity model, with the Bunter Sandstone
+                      Formation serving as the case study. Before running the
+                      simulations, I converted the original
+                      <strong><em>Petrel</em></strong> geological model into a
+                      workflow that could be used by
+                      <strong><em>TOUGHREACT</em></strong
+                      >. This involved converting the
+                      <strong><em>Petrel</em></strong> grid into VTK format
+                      using
+                      <a
+                        href="https://github.com/BinWang0213/PyGRDECL"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style="color: blue"
+                        >PyGRDECL</a
+                      >
+                      and then generating a
+                      <strong><em>TOUGHREACT</em></strong> mesh using
+                      <a
+                        href=" https://github.com/keurfonluu/toughio"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style="color: blue"
+                        >toughio</a
+                      >. I developed six simulation scenarios by combining three
+                      initial geochemical equilibrium states (non-equilibrium,
+                      semi-equilibrium, and equilibrium) with three activity
+                      model formulations (ideal, extended Debye-Huckel, and
+                      Pitzer). The objective was to investigate the effects of
+                      activity model selection under different geochemical
+                      equilibrium assumptions. The results indicated that
+                      failing to establish geochemical equilibrium before CO2
+                      injection can lead to a significant underestimation of
+                      mineral reactions. In contrast, simulations using the
+                      ideal activity model tended to overestimate reaction
+                      intensity even when equilibrium conditions were
+                      established. Despite this, the ideal model provided
+                      sufficient predictive accuracy for large-scale CO2 storage
+                      assessments while requiring considerably less
+                      computational effort than more complex formulations. To
+                      communicate the geological model more effectively, I also
+                      created a rotating 3D visualization of the
+                      <strong><em>Petrel</em></strong> grid in
+                      <strong><em>Python</em></strong
+                      >. The animation was later used in a presentation at the
+                      87th EAGE conference and helped illustrate the scale and
+                      geometry of the storage formation in a way that static
+                      figures could not.
+                    </p>
+                    <div class="note">
+                      <em
+                        ><strong>Note:</strong> The version shown on this
+                        website has been compressed and reduced in resolution to
+                        make it suitable for web publishing.</em
+                      >
+                    </div>
+                    <div class="reference-article">
+                      <a
+                        href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=whnMnfAAAAAJ&sortby=pubdate&citation_for_view=whnMnfAAAAAJ:2osOgNQ5qMEC"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="icon solid fa-link"
+                        ><span>Paper</span></a
+                      >
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </article>
+              </article>
 
-          <!-----------------------------  Post #7 ----------------------------->
+              <!-----------------------------  Post #7 ----------------------------->
 
-          <article>
-            <div class="introduction">
-              <div class="date">19 May 2026</div>
+              <article>
+                <div class="introduction">
+                  <div class="date">19 May 2026</div>
 
-              <button class="title" type="button">
-                <i class="far fa-plus-square toggle-plus"></i>
-                <i class="far fa-minus-square toggle-minus"></i>
-                <span class="title-text">
-                Delivered a freelance data analysis project with SQL and Power
-                BI
-                </span>
-              </button>
-            </div>
-
-            <div class="post-content">
-              <div class="result">
-                <img src="images/71.jpg" alt="" />
-                <img src="images/72.jpg" alt="" />
-              </div>
-
-              <div class="description">
-                <p>
-                  I completed this freelance project for a small business owner
-                  in Aberdeen who sold products through local markets as well as
-                  online platforms including Instagram and Etsy. The objective
-                  was to better understand sales performance and identify
-                  potential opportunities for growth using the available
-                  transaction data. I used <strong><em>SQL</em></strong> to
-                  clean, organize, and analyze the sales records before building
-                  an interactive <strong><em>Power BI</em></strong> dashboard to
-                  explore trends across products, sales channels, and seasonal
-                  patterns. The analysis showed that
-                  <strong><em>Product #2</em></strong> was the strongest
-                  contributor to overall revenue and consistently outperformed
-                  the other product categories. Sales activity also displayed a
-                  clear seasonal pattern, with demand peaking during the summer
-                  months. When comparing sales channels, Etsy and Instagram
-                  accounted for approximately 78% of total sales, significantly
-                  outperforming in-person marketplace sales. This suggested that
-                  online channels were the primary drivers of business growth
-                  and customer engagement. Based on these findings, I
-                  recommended focusing future marketing and sales efforts on
-                  online channels and considering the launch of an additional
-                  product within the same category as
-                  <strong><em>Product #2</em></strong
-                  >, particularly during the summer period when demand was
-                  highest. At the same time, I avoided drawing conclusions about
-                  customer demographics because the available dataset did not
-                  contain sufficient customer information to support that type
-                  of analysis. This project was a good reminder that useful
-                  business insights do not always require large or complex
-                  datasets. Even relatively simple sales records can reveal
-                  meaningful patterns when the data is cleaned, structured, and
-                  analyzed systematically.
-                </p>
-                <div class="note">
-                  <em
-                    ><strong>Note:</strong> Product names and selected business
-                    data have been anonymized to protect client privacy.</em
-                  >
+                  <button class="title" type="button">
+                    <i class="far fa-plus-square toggle-plus"></i>
+                    <i class="far fa-minus-square toggle-minus"></i>
+                    <span class="title-text">
+                      Delivered a freelance data analysis project with SQL and
+                      Power BI
+                    </span>
+                  </button>
                 </div>
-              </div>
-            </div>
-          </article>
 
-          <!-----------------------------  Post #6 ----------------------------->
+                <div class="post-content">
+                  <div class="result">
+                    <img src="images/71.jpg" alt="" />
+                    <img src="images/72.jpg" alt="" />
+                  </div>
 
-          <article>
-            <div class="introduction">
-              <div class="date">11 November 2025</div>
-
-              <button class="title" type="button">
-                <i class="far fa-plus-square toggle-plus"></i>
-                <i class="far fa-minus-square toggle-minus"></i>
-                <span class="title-text">
-                Performed inter-simulator sensitivity analysis of CO2 storage predictions
-                </span>
-              </button>
-            </div>
-
-            <div class="post-content">
-              <div class="result">
-                <img src="images/61.png" alt="" />
-                <img src="images/62.png" alt="" />
-                <img src="images/63.png" alt="" />
-              </div>
-
-              <div class="description">
-                <p>
-                  Reactive-transport models contain numerous physical and
-                  numerical parameters, many of which can strongly influence
-                  simulation outcomes. Understanding which parameters matter
-                  most is essential for interpreting results and assessing
-                  uncertainty in geological CO2 storage studies. Using the
-                  Bunter Sandstone Formation as a case study, I performed a
-                  sensitivity analysis with both
-                  <strong><em>CMG</em></strong> and
-                  <strong><em>TOUGHREACT</em></strong
-                  >. The study focused on four key parameters: injection rate,
-                  lateral boundary conditions, grid resolution, and reservoir
-                  permeability. My goal was to determine how variations in these
-                  parameters affected on reactive-transport simulations of CO2
-                  storage, with emphasis on geochemical evolution. To support
-                  the analysis, I used the
-                  <strong><em>Python</em></strong> post-processing workflows I
-                  had developed earlier to automate data extraction and
-                  organization. The processed datasets were then analyzed and
-                  visualized using
-                  <a
-                    href=" https://github.com/matplotlib/matplotlib"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style="color: blue"
-                    >Matplotlib</a
-                  >. Running the same sensitivity scenarios in two different
-                  simulators also allowed me to evaluate how modelling
-                  assumptions influenced the results. Both simulators showed
-                  similar overall trends despite differences in their underlying
-                  implementations. Increasing injection rates gradually over
-                  time improved storage capacity while keeping reservoir
-                  pressures below fracture limits. Lateral boundary conditions
-                  and reservoir permeability were found to be the primary
-                  controls on long-term pressure build-up, whereas grid
-                  resolution and relative permeability had a stronger influence
-                  on CO2 plume migration. One of the most interesting findings
-                  was the strong sensitivity of geochemical predictions to grid
-                  resolution. Changes in numerical discretization affected the
-                  numerical representation of CO2 concentration gradients, which
-                  in turn influenced acidity conditions and mineral reactions.
-                  The results highlighted how numerical choices can sometimes be
-                  just as important as physical parameters when interpreting
-                  simulation outcomes. Overall, the study demonstrated the
-                  importance of evaluating uncertainty from both geological and
-                  numerical sources when assessing the long-term performance of
-                  CO2 storage projects.
-                </p>
-              </div>
-            </div>
-          </article>
-
-          <!-----------------------------  Post #5 ----------------------------->
-
-          <article>
-            <div class="introduction">
-              <div class="date">18 October 2025</div>
-
-              <button class="title" type="button">
-                <i class="far fa-plus-square toggle-plus"></i>
-                <i class="far fa-minus-square toggle-minus"></i>
-                <span class="title-text">
-                Conducted inter-simulator reactive-transport simulations of CO2 storage
-                </span>
-              </button>
-            </div>
-
-            <div class="post-content">
-              <div class="result">
-                <img src="images/51.png" alt="" />
-                <img src="images/52.png" alt="" />
-                <img src="images/53.png" alt="" />
-              </div>
-
-              <div class="description">
-                <p>
-                  The Bunter Sandstone Formation is widely considered one of the
-                  most promising geological CO2 storage candidates in the UK.
-                  Despite its potential, uncertainties remain regarding how
-                  geochemical reactions evolve during CO2 injection and how
-                  consistently different reactive-transport simulators predict
-                  these processes. To investigate these questions, I carried out
-                  a series of reactive-transport simulations using both
-                  <strong><em>CMG-GEM</em></strong> and
-                  <strong><em>TOUGHREACT</em></strong
-                  >. My objective was to compare storage predictions under
-                  harmonised modelling assumptions and identify where the two
-                  simulators agreed and where they diverged. The simulation
-                  outputs were processed using the
-                  <strong><em>Python</em></strong> automation pipelines I had
-                  previously developed and visualised in three dimensions using
-                  <a
-                    href="https://github.com/pyvista/pyvista"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style="color: blue"
-                    >PyVista</a
-                  >. Although the models were configured as consistently as
-                  possible, they produced systematic differences that could be
-                  traced back to their treatment of relative permeability
-                  hysteresis and CO2 dissolution.
-                  <strong><em>TOUGHREACT</em></strong> generally predicted a
-                  larger CO2 plume beneath the caprock, while
-                  <strong><em>CMG-GEM</em></strong> predicted greater pressure
-                  build-up around the injection well. The geochemical results
-                  were more encouraging. Both simulators indicated that calcite
-                  dissolution and associated acidity changes remained largely
-                  confined to the near-well region, suggesting limited
-                  formation-scale geochemical disturbance. Structural trapping
-                  dominated the storage mechanism throughout the simulation
-                  period, exceeding 80% of the stored CO2 immediately after well
-                  shut-in, while mineral trapping contributed approximately 4%
-                  of the total storage. This work reinforced the idea that
-                  individual simulator predictions should not be interpreted as
-                  absolute outcomes. Instead, the range of results produced by
-                  multiple simulators can be viewed as a practical uncertainty
-                  envelope, providing a more robust basis for assessing
-                  long-term CO2 storage performance.
-                </p>
-              </div>
-            </div>
-          </article>
-
-          <!-----------------------------  Post #4 ----------------------------->
-
-          <article>
-            <div class="introduction">
-              <div class="date">2 October 2025</div>
-
-              <button class="title" type="button">
-                <i class="far fa-plus-square toggle-plus"></i>
-                <i class="far fa-minus-square toggle-minus"></i>
-                <span class="title-text">
-                Developed a workflow for geochemical initialization of aquifers
-                </span>
-              </button>
-            </div>
-
-            <div class="post-content">
-              <div class="result">
-                <img src="images/4.png" alt="" />
-              </div>
-
-              <div class="description">
-                <p>
-                  Accurate geochemical initialization is a critical but often
-                  overlooked step in reactive-transport modelling. Before
-                  simulating CO2 injection, the rock, formation water, and
-                  dissolved species should be in chemical equilibrium. If this
-                  initial state is not properly established, the simulator may
-                  spend much of the calculation correcting artificial imbalances
-                  rather than modelling the actual effects of CO2 storage. To
-                  address this challenge, I developed a workflow for chemically
-                  initializing geological formations prior to CO2 injection. The
-                  workflow combines geochemical modelling with thermodynamic
-                  equilibrium calculations to generate realistic CO2-rock-water
-                  systems that can be used as starting conditions for
-                  reactive-transport simulations. The workflow employs ion
-                  activity models to calculate equilibrium concentrations while
-                  carefully adjusting mineral assemblages to produce salinity
-                  and pH values that remain broadly consistent with available
-                  laboratory measurements. During this work, I observed that
-                  equilibrium concentrations predicted by activity models can
-                  differ substantially from short-term experimental
-                  observations. These differences are not necessarily errors;
-                  rather, they reflect the fact that laboratory experiments are
-                  often constrained by practical timescales and may not fully
-                  reach long-term equilibrium conditions. The workflow provides
-                  a practical bridge between laboratory observations and
-                  thermodynamic modelling, helping create more realistic initial
-                  conditions for geological CO2 storage simulations. The
-                  methodology was later published in a peer-reviewed journal and
-                  became a key component of my broader research on
-                  reactive-transport modelling.
-                </p>
-                <div class="reference-article">
-                  <a
-                    href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=whnMnfAAAAAJ&sortby=pubdate&citation_for_view=whnMnfAAAAAJ:9yKSN-GCB0IC"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="icon solid fa-link"
-                    ><span>Paper</span>
-                  </a>
+                  <div class="description">
+                    <p>
+                      I completed this freelance project for a small business
+                      owner in Aberdeen who sold products through local markets
+                      as well as online platforms including Instagram and Etsy.
+                      The objective was to better understand sales performance
+                      and identify potential opportunities for growth using the
+                      available transaction data. I used
+                      <strong><em>SQL</em></strong> to clean, organize, and
+                      analyze the sales records before building an interactive
+                      <strong><em>Power BI</em></strong> dashboard to explore
+                      trends across products, sales channels, and seasonal
+                      patterns. The analysis showed that
+                      <strong><em>Product #2</em></strong> was the strongest
+                      contributor to overall revenue and consistently
+                      outperformed the other product categories. Sales activity
+                      also displayed a clear seasonal pattern, with demand
+                      peaking during the summer months. When comparing sales
+                      channels, Etsy and Instagram accounted for approximately
+                      78% of total sales, significantly outperforming in-person
+                      marketplace sales. This suggested that online channels
+                      were the primary drivers of business growth and customer
+                      engagement. Based on these findings, I recommended
+                      focusing future marketing and sales efforts on online
+                      channels and considering the launch of an additional
+                      product within the same category as
+                      <strong><em>Product #2</em></strong
+                      >, particularly during the summer period when demand was
+                      highest. At the same time, I avoided drawing conclusions
+                      about customer demographics because the available dataset
+                      did not contain sufficient customer information to support
+                      that type of analysis. This project was a good reminder
+                      that useful business insights do not always require large
+                      or complex datasets. Even relatively simple sales records
+                      can reveal meaningful patterns when the data is cleaned,
+                      structured, and analyzed systematically.
+                    </p>
+                    <div class="note">
+                      <em
+                        ><strong>Note:</strong> Product names and selected
+                        business data have been anonymized to protect client
+                        privacy.</em
+                      >
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </article>
+              </article>
 
-          <!-----------------------------  Post #3 ----------------------------->
+              <!-----------------------------  Post #6 ----------------------------->
 
-          <article>
-            <div class="introduction">
-              <div class="date">11 June 2025</div>
+              <article>
+                <div class="introduction">
+                  <div class="date">11 November 2025</div>
 
-              <button class="title" type="button">
-                <i class="far fa-plus-square toggle-plus"></i>
-                <i class="far fa-minus-square toggle-minus"></i>
-                <span class="title-text">
-                Developed automation pipelines for data processing in Python
-                </span>
-              </button>
-            </div>
+                  <button class="title" type="button">
+                    <i class="far fa-plus-square toggle-plus"></i>
+                    <i class="far fa-minus-square toggle-minus"></i>
+                    <span class="title-text">
+                      Performed inter-simulator sensitivity analysis of CO2
+                      storage predictions
+                    </span>
+                  </button>
+                </div>
 
-            <div class="post-content">
-              <div class="result">
-                <pre class="code_editor">
+                <div class="post-content">
+                  <div class="result">
+                    <img src="images/61.png" alt="" />
+                    <img src="images/62.png" alt="" />
+                    <img src="images/63.png" alt="" />
+                  </div>
+
+                  <div class="description">
+                    <p>
+                      Reactive-transport models contain numerous physical and
+                      numerical parameters, many of which can strongly influence
+                      simulation outcomes. Understanding which parameters matter
+                      most is essential for interpreting results and assessing
+                      uncertainty in geological CO2 storage studies. Using the
+                      Bunter Sandstone Formation as a case study, I performed a
+                      sensitivity analysis with both
+                      <strong><em>CMG</em></strong> and
+                      <strong><em>TOUGHREACT</em></strong
+                      >. The study focused on four key parameters: injection
+                      rate, lateral boundary conditions, grid resolution, and
+                      reservoir permeability. My goal was to determine how
+                      variations in these parameters affected on
+                      reactive-transport simulations of CO2 storage, with
+                      emphasis on geochemical evolution. To support the
+                      analysis, I used the
+                      <strong><em>Python</em></strong> post-processing workflows
+                      I had developed earlier to automate data extraction and
+                      organization. The processed datasets were then analyzed
+                      and visualized using
+                      <a
+                        href=" https://github.com/matplotlib/matplotlib"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style="color: blue"
+                        >Matplotlib</a
+                      >. Running the same sensitivity scenarios in two different
+                      simulators also allowed me to evaluate how modelling
+                      assumptions influenced the results. Both simulators showed
+                      similar overall trends despite differences in their
+                      underlying implementations. Increasing injection rates
+                      gradually over time improved storage capacity while
+                      keeping reservoir pressures below fracture limits. Lateral
+                      boundary conditions and reservoir permeability were found
+                      to be the primary controls on long-term pressure build-up,
+                      whereas grid resolution and relative permeability had a
+                      stronger influence on CO2 plume migration. One of the most
+                      interesting findings was the strong sensitivity of
+                      geochemical predictions to grid resolution. Changes in
+                      numerical discretization affected the numerical
+                      representation of CO2 concentration gradients, which in
+                      turn influenced acidity conditions and mineral reactions.
+                      The results highlighted how numerical choices can
+                      sometimes be just as important as physical parameters when
+                      interpreting simulation outcomes. Overall, the study
+                      demonstrated the importance of evaluating uncertainty from
+                      both geological and numerical sources when assessing the
+                      long-term performance of CO2 storage projects.
+                    </p>
+                  </div>
+                </div>
+              </article>
+
+              <!-----------------------------  Post #5 ----------------------------->
+
+              <article>
+                <div class="introduction">
+                  <div class="date">18 October 2025</div>
+
+                  <button class="title" type="button">
+                    <i class="far fa-plus-square toggle-plus"></i>
+                    <i class="far fa-minus-square toggle-minus"></i>
+                    <span class="title-text">
+                      Conducted inter-simulator reactive-transport simulations
+                      of CO2 storage
+                    </span>
+                  </button>
+                </div>
+
+                <div class="post-content">
+                  <div class="result">
+                    <img src="images/51.png" alt="" />
+                    <img src="images/52.png" alt="" />
+                    <img src="images/53.png" alt="" />
+                  </div>
+
+                  <div class="description">
+                    <p>
+                      The Bunter Sandstone Formation is widely considered one of
+                      the most promising geological CO2 storage candidates in
+                      the UK. Despite its potential, uncertainties remain
+                      regarding how geochemical reactions evolve during CO2
+                      injection and how consistently different
+                      reactive-transport simulators predict these processes. To
+                      investigate these questions, I carried out a series of
+                      reactive-transport simulations using both
+                      <strong><em>CMG-GEM</em></strong> and
+                      <strong><em>TOUGHREACT</em></strong
+                      >. My objective was to compare storage predictions under
+                      harmonised modelling assumptions and identify where the
+                      two simulators agreed and where they diverged. The
+                      simulation outputs were processed using the
+                      <strong><em>Python</em></strong> automation pipelines I
+                      had previously developed and visualised in three
+                      dimensions using
+                      <a
+                        href="https://github.com/pyvista/pyvista"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style="color: blue"
+                        >PyVista</a
+                      >. Although the models were configured as consistently as
+                      possible, they produced systematic differences that could
+                      be traced back to their treatment of relative permeability
+                      hysteresis and CO2 dissolution.
+                      <strong><em>TOUGHREACT</em></strong> generally predicted a
+                      larger CO2 plume beneath the caprock, while
+                      <strong><em>CMG-GEM</em></strong> predicted greater
+                      pressure build-up around the injection well. The
+                      geochemical results were more encouraging. Both simulators
+                      indicated that calcite dissolution and associated acidity
+                      changes remained largely confined to the near-well region,
+                      suggesting limited formation-scale geochemical
+                      disturbance. Structural trapping dominated the storage
+                      mechanism throughout the simulation period, exceeding 80%
+                      of the stored CO2 immediately after well shut-in, while
+                      mineral trapping contributed approximately 4% of the total
+                      storage. This work reinforced the idea that individual
+                      simulator predictions should not be interpreted as
+                      absolute outcomes. Instead, the range of results produced
+                      by multiple simulators can be viewed as a practical
+                      uncertainty envelope, providing a more robust basis for
+                      assessing long-term CO2 storage performance.
+                    </p>
+                  </div>
+                </div>
+              </article>
+
+              <!-----------------------------  Post #4 ----------------------------->
+
+              <article>
+                <div class="introduction">
+                  <div class="date">2 October 2025</div>
+
+                  <button class="title" type="button">
+                    <i class="far fa-plus-square toggle-plus"></i>
+                    <i class="far fa-minus-square toggle-minus"></i>
+                    <span class="title-text">
+                      Developed a workflow for geochemical initialization of
+                      aquifers
+                    </span>
+                  </button>
+                </div>
+
+                <div class="post-content">
+                  <div class="result">
+                    <img src="images/4.png" alt="" />
+                  </div>
+
+                  <div class="description">
+                    <p>
+                      Accurate geochemical initialization is a critical but
+                      often overlooked step in reactive-transport modelling.
+                      Before simulating CO2 injection, the rock, formation
+                      water, and dissolved species should be in chemical
+                      equilibrium. If this initial state is not properly
+                      established, the simulator may spend much of the
+                      calculation correcting artificial imbalances rather than
+                      modelling the actual effects of CO2 storage. To address
+                      this challenge, I developed a workflow for chemically
+                      initializing geological formations prior to CO2 injection.
+                      The workflow combines geochemical modelling with
+                      thermodynamic equilibrium calculations to generate
+                      realistic CO2-rock-water systems that can be used as
+                      starting conditions for reactive-transport simulations.
+                      The workflow employs ion activity models to calculate
+                      equilibrium concentrations while carefully adjusting
+                      mineral assemblages to produce salinity and pH values that
+                      remain broadly consistent with available laboratory
+                      measurements. During this work, I observed that
+                      equilibrium concentrations predicted by activity models
+                      can differ substantially from short-term experimental
+                      observations. These differences are not necessarily
+                      errors; rather, they reflect the fact that laboratory
+                      experiments are often constrained by practical timescales
+                      and may not fully reach long-term equilibrium conditions.
+                      The workflow provides a practical bridge between
+                      laboratory observations and thermodynamic modelling,
+                      helping create more realistic initial conditions for
+                      geological CO2 storage simulations. The methodology was
+                      later published in a peer-reviewed journal and became a
+                      key component of my broader research on reactive-transport
+                      modelling.
+                    </p>
+                    <div class="reference-article">
+                      <a
+                        href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=whnMnfAAAAAJ&sortby=pubdate&citation_for_view=whnMnfAAAAAJ:9yKSN-GCB0IC"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="icon solid fa-link"
+                        ><span>Paper</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </article>
+
+              <!-----------------------------  Post #3 ----------------------------->
+
+              <article>
+                <div class="introduction">
+                  <div class="date">11 June 2025</div>
+
+                  <button class="title" type="button">
+                    <i class="far fa-plus-square toggle-plus"></i>
+                    <i class="far fa-minus-square toggle-minus"></i>
+                    <span class="title-text">
+                      Developed automation pipelines for data processing in
+                      Python
+                    </span>
+                  </button>
+                </div>
+
+                <div class="post-content">
+                  <div class="result">
+                    <pre class="code_editor">
                         <code class="language-python">
   # .........................................................
   #  Automation pipeline for processing data from CMG
@@ -594,7 +619,7 @@
                         </code>
                       </pre>
 
-                <pre class="code_editor">
+                    <pre class="code_editor">
                         <code class="language-python">
   # .........................................................
   #  Automation pipeline for processing data from TOUGHREACT
@@ -701,66 +726,68 @@
       return blocks
                         </code>
                       </pre>
-              </div>
+                  </div>
 
-              <div class="description">
-                <p>
-                  Reactive-transport simulations generate a huge amount of
-                  output data. A single simulation can contain thousands of grid
-                  cells, dozens of variables, and hundreds of time steps, making
-                  manual processing both inefficient and error-prone. Since I
-                  was comparing results from
-                  <strong><em>CMG-GEM</em></strong> and
-                  <strong><em>TOUGHREACT</em></strong
-                  >, I also needed a consistent workflow that could handle
-                  outputs from both simulators in the same way. To solve this
-                  problem, I developed a set of
-                  <strong><em>Python</em></strong> automation pipelines for
-                  importing, organizing, and processing simulation results. The
-                  workflow begins by reading raw simulator output files line by
-                  line and converting unstructured text into a format suitable
-                  for analysis. This includes identifying simulation time steps,
-                  extracting reservoir properties, mapping values to their
-                  corresponding grid cells, and preserving spatial indexing
-                  information. The main functions,
-                  <strong><em>import_cmg_data()</em></strong> and
-                  <strong><em>import_toughreact_data()</em></strong
-                  >, automatically parse simulator outputs and store the results
-                  in structured numerical arrays. The workflow also identifies
-                  available variables, tracks temporal changes, and creates a
-                  consistent data structure regardless of the source simulator.
-                  Building these tools significantly reduced the amount of time
-                  required for post-processing and eliminated many repetitive
-                  manual tasks. More importantly, it improved the
-                  reproducibility of my work by ensuring that every simulation
-                  was processed using the same methodology. The processed
-                  datasets later became the foundation for both 2D and 3D
-                  visualization workflows, allowing me to analyze CO2 migration,
-                  geochemical evolution, pressure behavior, and mineral
-                  reactions across multiple simulation scenarios.
-                </p>
-              </div>
-            </div>
-          </article>
+                  <div class="description">
+                    <p>
+                      Reactive-transport simulations generate a huge amount of
+                      output data. A single simulation can contain thousands of
+                      grid cells, dozens of variables, and hundreds of time
+                      steps, making manual processing both inefficient and
+                      error-prone. Since I was comparing results from
+                      <strong><em>CMG-GEM</em></strong> and
+                      <strong><em>TOUGHREACT</em></strong
+                      >, I also needed a consistent workflow that could handle
+                      outputs from both simulators in the same way. To solve
+                      this problem, I developed a set of
+                      <strong><em>Python</em></strong> automation pipelines for
+                      importing, organizing, and processing simulation results.
+                      The workflow begins by reading raw simulator output files
+                      line by line and converting unstructured text into a
+                      format suitable for analysis. This includes identifying
+                      simulation time steps, extracting reservoir properties,
+                      mapping values to their corresponding grid cells, and
+                      preserving spatial indexing information. The main
+                      functions, <strong><em>import_cmg_data()</em></strong> and
+                      <strong><em>import_toughreact_data()</em></strong
+                      >, automatically parse simulator outputs and store the
+                      results in structured numerical arrays. The workflow also
+                      identifies available variables, tracks temporal changes,
+                      and creates a consistent data structure regardless of the
+                      source simulator. Building these tools significantly
+                      reduced the amount of time required for post-processing
+                      and eliminated many repetitive manual tasks. More
+                      importantly, it improved the reproducibility of my work by
+                      ensuring that every simulation was processed using the
+                      same methodology. The processed datasets later became the
+                      foundation for both 2D and 3D visualization workflows,
+                      allowing me to analyze CO2 migration, geochemical
+                      evolution, pressure behavior, and mineral reactions across
+                      multiple simulation scenarios.
+                    </p>
+                  </div>
+                </div>
+              </article>
 
-          <!-----------------------------  Post #2 ----------------------------->
+              <!-----------------------------  Post #2 ----------------------------->
 
-          <article>
-            <div class="introduction">
-              <div class="date">4 November 2024</div>
+              <article>
+                <div class="introduction">
+                  <div class="date">4 November 2024</div>
 
-              <button class="title" type="button">
-                <i class="far fa-plus-square toggle-plus"></i>
-                <i class="far fa-minus-square toggle-minus"></i>
-                <span class="title-text">
-                Modified and extended the TOUGHREACT source code in Fortran
-                </span>
-              </button>
-            </div>
+                  <button class="title" type="button">
+                    <i class="far fa-plus-square toggle-plus"></i>
+                    <i class="far fa-minus-square toggle-minus"></i>
+                    <span class="title-text">
+                      Modified and extended the TOUGHREACT source code in
+                      Fortran
+                    </span>
+                  </button>
+                </div>
 
-            <div class="post-content">
-              <div class="result">
-                <pre class="code_editor">
+                <div class="post-content">
+                  <div class="result">
+                    <pre class="code_editor">
                         <code class="language-fortran">
   c .........................................................
   c  Incorporating specific relative permeability fucntions
@@ -890,7 +917,7 @@
                         </code>
                       </pre>
 
-                <pre class="code_editor">
+                    <pre class="code_editor">
                         <code class="language-fortran">
   c .........................................................
   c  Incorporating ideal activity model
@@ -1065,112 +1092,119 @@
   c
                         </code>
                       </pre>
-              </div>
+                  </div>
 
-              <div class="description">
-                <p>
-                  <strong><em>TOUGHREACT</em></strong> is a non-isothermal,
-                  multi-component, multi-phase reactive-transport simulator
-                  widely used for modelling subsurface processes such as
-                  geological CO2 storage, geothermal systems, and environmental
-                  remediation. It can simulate both batch geochemical reactions
-                  and three-dimensional reactive flow while accounting for
-                  mineral dissolution, precipitation, and aqueous speciation.
-                  While using <strong><em>TOUGHREACT</em></strong> for my
-                  research, I found two limitations that made direct comparison
-                  with <strong><em>CMG-GEM</em></strong> difficult. The first
-                  was the absence of an ideal activity model within the
-                  geochemical framework. The second was the lack of support for
-                  tabular or functional relative permeability inputs. These
-                  differences affected the ability to align modelling
-                  assumptions across the two simulators and isolate the causes
-                  of discrepancies in their predictions. To address this, I
-                  modified the <strong><em>Fortran</em></strong> source code of
-                  <strong><em>TOUGHREACT</em></strong> version 4.13. The
-                  implementation involved extending the relative permeability
-                  routines in <strong><em>t2f_v4.f</em></strong> and modifying
-                  the geochemical calculations in
-                  <strong><em>geochem_v4.f</em></strong
-                  >. The goal was not simply to add new functionality, but to
-                  create a more consistent basis for cross-simulator comparison.
-                  The updated version allowed me to run simulations using
-                  modelling assumptions that more closely matched those
-                  available in <strong><em>CMG-GEM</em></strong
-                  >. This made it possible to evaluate differences arising from
-                  the numerical and physical formulations of the simulators
-                  rather than from incompatible input options. The work also
-                  gave me practical experience working with a large scientific
-                  codebase and translating theoretical modelling requirements
-                  into production-level <strong><em>Fortran</em></strong> code.
-                </p>
+                  <div class="description">
+                    <p>
+                      <strong><em>TOUGHREACT</em></strong> is a non-isothermal,
+                      multi-component, multi-phase reactive-transport simulator
+                      widely used for modelling subsurface processes such as
+                      geological CO2 storage, geothermal systems, and
+                      environmental remediation. It can simulate both batch
+                      geochemical reactions and three-dimensional reactive flow
+                      while accounting for mineral dissolution, precipitation,
+                      and aqueous speciation. While using
+                      <strong><em>TOUGHREACT</em></strong> for my research, I
+                      found two limitations that made direct comparison with
+                      <strong><em>CMG-GEM</em></strong> difficult. The first was
+                      the absence of an ideal activity model within the
+                      geochemical framework. The second was the lack of support
+                      for tabular or functional relative permeability inputs.
+                      These differences affected the ability to align modelling
+                      assumptions across the two simulators and isolate the
+                      causes of discrepancies in their predictions. To address
+                      this, I modified the
+                      <strong><em>Fortran</em></strong> source code of
+                      <strong><em>TOUGHREACT</em></strong> version 4.13. The
+                      implementation involved extending the relative
+                      permeability routines in
+                      <strong><em>t2f_v4.f</em></strong> and modifying the
+                      geochemical calculations in
+                      <strong><em>geochem_v4.f</em></strong
+                      >. The goal was not simply to add new functionality, but
+                      to create a more consistent basis for cross-simulator
+                      comparison. The updated version allowed me to run
+                      simulations using modelling assumptions that more closely
+                      matched those available in
+                      <strong><em>CMG-GEM</em></strong
+                      >. This made it possible to evaluate differences arising
+                      from the numerical and physical formulations of the
+                      simulators rather than from incompatible input options.
+                      The work also gave me practical experience working with a
+                      large scientific codebase and translating theoretical
+                      modelling requirements into production-level
+                      <strong><em>Fortran</em></strong> code.
+                    </p>
 
-                <div class="reference-article">
-                  <a
-                    href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=whnMnfAAAAAJ&sortby=pubdate&citation_for_view=whnMnfAAAAAJ:d1gkVwhDpl0C"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="icon solid fa-link"
-                    ><span>Paper</span></a
-                  >
+                    <div class="reference-article">
+                      <a
+                        href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=whnMnfAAAAAJ&sortby=pubdate&citation_for_view=whnMnfAAAAAJ:d1gkVwhDpl0C"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="icon solid fa-link"
+                        ><span>Paper</span></a
+                      >
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </article>
+              </article>
 
-          <!-----------------------------  Post #1 ----------------------------->
+              <!-----------------------------  Post #1 ----------------------------->
 
-          <article>
-            <div class="introduction">
-              <div class="date">7 September 2022</div>
+              <article>
+                <div class="introduction">
+                  <div class="date">7 September 2022</div>
 
-              <button class="title" type="button">
-                <i class="far fa-plus-square toggle-plus"></i>
-                <i class="far fa-minus-square toggle-minus"></i>
-                <span class="title-text">
-                Created GIS-based maps for potential CO2 storage sites
-                </span>
-              </button>
-            </div>
-
-            <div class="post-content">
-              <div class="result">
-                <img src="images/1.jpg" alt="" />
-              </div>
-
-              <div class="description">
-                <p>
-                  Finding suitable CO2 storage sites starts with identifying
-                  geological formations that can safely contain CO2 over very
-                  long timescales. Geological storage remains the most practical
-                  option because subsurface formations have already demonstrated
-                  their ability to trap hydrocarbons for millions of years, and
-                  a large amount of geological data is available from decades of
-                  oil and gas exploration. As part of a four-stage
-                  site-screening workflow, I collected and integrated publicly
-                  available GIS datasets to evaluate potential CO2 storage
-                  opportunities across the UK. The project involved combining
-                  geological, geographical, and infrastructure datasets into a
-                  single mapping framework that could be used to compare
-                  potential storage locations. The resulting maps highlighted
-                  the spatial distribution of prospective storage sites and
-                  helped narrow down areas for further investigation. This work
-                  formed the basis of a presentation that I delivered at the 3rd
-                  ICESF conference.
-                </p>
-                <div class="reference-article">
-                  <a
-                    href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=whnMnfAAAAAJ&sortby=pubdate&citation_for_view=whnMnfAAAAAJ:qjMakFHDy7sC"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="icon solid fa-link"
-                    ><span>Paper</span></a
-                  >
+                  <button class="title" type="button">
+                    <i class="far fa-plus-square toggle-plus"></i>
+                    <i class="far fa-minus-square toggle-minus"></i>
+                    <span class="title-text">
+                      Created GIS-based maps for potential CO2 storage sites
+                    </span>
+                  </button>
                 </div>
-              </div>
-            </div>
-          </article>
-        </section>
 
+                <div class="post-content">
+                  <div class="result">
+                    <img src="images/1.jpg" alt="" />
+                  </div>
+
+                  <div class="description">
+                    <p>
+                      Finding suitable CO2 storage sites starts with identifying
+                      geological formations that can safely contain CO2 over
+                      very long timescales. Geological storage remains the most
+                      practical option because subsurface formations have
+                      already demonstrated their ability to trap hydrocarbons
+                      for millions of years, and a large amount of geological
+                      data is available from decades of oil and gas exploration.
+                      As part of a four-stage site-screening workflow, I
+                      collected and integrated publicly available GIS datasets
+                      to evaluate potential CO2 storage opportunities across the
+                      UK. The project involved combining geological,
+                      geographical, and infrastructure datasets into a single
+                      mapping framework that could be used to compare potential
+                      storage locations. The resulting maps highlighted the
+                      spatial distribution of prospective storage sites and
+                      helped narrow down areas for further investigation. This
+                      work formed the basis of a presentation that I delivered
+                      at the 3rd ICESF conference.
+                    </p>
+                    <div class="reference-article">
+                      <a
+                        href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=whnMnfAAAAAJ&sortby=pubdate&citation_for_view=whnMnfAAAAAJ:qjMakFHDy7sC"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="icon solid fa-link"
+                        ><span>Paper</span></a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </section>
+          </div>
+        </div>
         <!----------------------------------------------------------------------------------------------------------- End of Posts --------------------------------------------------------------------------->
 
         <!-- Footer
