@@ -4490,8 +4490,8 @@ body.is-preload #intro:not(.hidden) + #header + #nav {
     .introduction
     .title
     .toggle-minus {
-    margin-right: 1rem;
-    margin-top: 1rem;
+    margin-right: 0.5rem;
+    margin-top: 0rem;
   }
 
   #main
